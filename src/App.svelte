@@ -81,6 +81,10 @@
 </main>
 
 <style>
+    main {
+        padding: 1rem;
+    }
+
     #inlines {
         display: grid;
         grid-template-columns: repeat(2, auto);
