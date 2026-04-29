@@ -30,6 +30,7 @@
 
 hr {
   margin: 1rem 0;
+  border-color: var(--code-bg);
 }
 
 h1 {
