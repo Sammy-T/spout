@@ -18,7 +18,7 @@
         <p>Lorem ipsum dolor sit amet feugait facilisi labore.</p>
     </hgroup>
 
-    <section>
+    <section id="inlines">
         <p>
             <abbr title="Abbreviation">Abbr.</abbr>
             <code>&lt;abbr&gt;</code>
@@ -79,3 +79,10 @@
         </footer>
     </blockquote>
 </main>
+
+<style>
+    #inlines {
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+    }
+</style>
