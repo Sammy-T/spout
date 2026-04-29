@@ -28,6 +28,10 @@
   margin: 0;
 }
 
+hr {
+  margin: 1rem 0;
+}
+
 h1 {
   color: oklch(from var(--text) calc(l * 0.95) c h);
   font-size: clamp(1.5rem, calc(0.9dvw + 1rem), 2rem);
@@ -69,6 +73,18 @@ p {
   margin-bottom: 0.5rem;
 }
 
+hgroup {
+  margin-bottom: 1rem;
+
+  & * {
+    margin: 0;
+  }
+
+  & :last-child {
+    color: oklch(from var(--text) calc(l * 0.5) c h);
+  }
+}
+
 del {
   color: rgb(218, 69, 69);
 }
@@ -106,6 +122,7 @@ code {
 blockquote {  
   margin: 0;
   padding: 1rem;
+  margin-bottom: 1rem;
   border-left: 0.25rem solid var(--code-bg);
   border-radius: 0.25rem;
   color: oklch(from var(--text) calc(l * 0.85) c h);

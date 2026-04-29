@@ -11,6 +11,13 @@
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
         <p>Lorem ipsum dolor sit amet vel dolore dolore aliquyam diam dolore nisl autem est accusam dignissim et eirmod.</p>
+        <p>Lorem ipsum dolor sit amet lorem sanctus luptatum accusam dolor sea duis nonummy et amet at et duo vel kasd vero. 
+            Amet in et no ipsum invidunt dolores et diam ipsum dignissim sadipscing. Invidunt amet ut elitr diam sanctus imperdiet imperdiet 
+            aliquyam sed. Kasd accusam minim accusam amet no nulla nulla quod duo clita tempor invidunt amet takimata duis. Et in feugiat justo 
+            sanctus dolore et lorem vero amet. Soluta dolores elitr erat elitr aliquyam at commodo diam accusam nulla magna autem aliquyam ea. 
+            Amet nostrud tempor facer odio nonummy congue sit voluptua tempor sit amet kasd et labore labore. At ipsum dolor dolore eos et dolor 
+            duo sed magna adipiscing amet erat. Ullamcorper iusto eum commodo diam amet dolore sadipscing illum at aliquyam consequat et. Lorem est 
+            dolor dolore dolore facilisis dolore eirmod dolor sit facilisis lorem elitr stet ullamcorper accusam aliquyam ipsum tation.</p>
     </section>
 
     <hgroup>
@@ -83,6 +90,13 @@
 <style>
     main {
         padding: 1rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 0.25rem;
+        border: 2px solid var(--code-bg);
     }
 
     #inlines {
