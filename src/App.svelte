@@ -51,7 +51,7 @@
             <code>&lt;del&gt;</code>
         </p>
         <p>
-            Text<sub>Sub</sub>
+            Text <sub>Sub</sub>
             <code>&lt;sub&gt;</code>
         </p>
         <p>
@@ -59,7 +59,7 @@
             <code>&lt;ins&gt;</code>
         </p>
         <p>
-            Text<sup>Sup</sup>
+            Text <sup>Sup</sup>
             <code>&lt;sup&gt;</code>
         </p>
         <p>

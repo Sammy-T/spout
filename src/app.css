@@ -3,7 +3,7 @@
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  /* --mono: ui-monospace, Consolas, monospace; */
+  --mono: ui-monospace, Consolas, monospace;
 
   --bg: #11151b;
   --text: #ffffff;
@@ -70,5 +70,15 @@ kbd {
   padding: 0.2rem 0.35rem;
   background-color: oklch(from var(--text) calc(l * 0.85) c h);
   color: var(--bg);
+  border-radius: 0.25rem;
+}
+
+code, pre {
+  font-family: var(--mono);
+}
+
+code {
+  padding: 0.25rem;
+  background-color: oklch(from var(--bg) calc(l + 0.1) c h);
   border-radius: 0.25rem;
 }
