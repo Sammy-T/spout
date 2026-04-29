@@ -7,8 +7,8 @@
 
   --bg: #11151b;
   --text: #ffffff;
+  --code-bg: oklch(from var(--bg) calc(l + 0.1) c h);
   /* --border: #e5e4e7; */
-  /* --code-bg: #f4f3ec; */
   /* --accent: #aa3bff; */
   /* --accent-bg: rgba(170, 59, 255, 0.1); */
   /* --accent-border: rgba(170, 59, 255, 0.5); */
@@ -79,14 +79,14 @@ code, pre {
 
 code {
   padding: 0.25rem;
-  background-color: oklch(from var(--bg) calc(l + 0.1) c h);
+  background-color: var(--code-bg);
   border-radius: 0.25rem;
 }
 
 blockquote {  
   margin: 0;
   padding: 1rem;
-  border-left: 0.25rem solid oklch(from var(--bg) calc(l + 0.1) c h);
+  border-left: 0.25rem solid var(--code-bg);
   border-radius: 0.25rem;
 }
 
