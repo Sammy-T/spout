@@ -30,7 +30,7 @@
 
 h1 {
   color: oklch(from var(--text) calc(l * 0.95) c h);
-  font-size: clamp(1.5rem, calc(1dvw + 1rem), 2rem);
+  font-size: clamp(1.5rem, calc(0.9dvw + 1rem), 2rem);
 }
 
 h2 {
