@@ -82,3 +82,14 @@ code {
   background-color: oklch(from var(--bg) calc(l + 0.1) c h);
   border-radius: 0.25rem;
 }
+
+blockquote {  
+  margin: 0;
+  padding: 1rem;
+  border-left: 0.25rem solid oklch(from var(--bg) calc(l + 0.1) c h);
+  border-radius: 0.25rem;
+}
+
+cite {
+  color: oklch(from var(--text) calc(l * 0.7) c h);
+}
