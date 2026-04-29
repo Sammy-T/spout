@@ -126,6 +126,10 @@ blockquote {
   border-left: 0.25rem solid var(--code-bg);
   border-radius: 0.25rem;
   color: oklch(from var(--text) calc(l * 0.85) c h);
+
+  & :last-child {
+    margin-top: 0.5rem;
+  }
 }
 
 cite {
