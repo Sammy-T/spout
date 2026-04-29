@@ -1,25 +1,74 @@
 :root {
   color-scheme: light dark;
 
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* --mono: ui-monospace, Consolas, monospace; */
+
   --bg: #11151b;
-  /* --text: #ffffff; */
-  /* --text-h: #08060d; */
+  --text: #ffffff;
   /* --border: #e5e4e7; */
   /* --code-bg: #f4f3ec; */
   /* --accent: #aa3bff; */
   /* --accent-bg: rgba(170, 59, 255, 0.1); */
   /* --accent-border: rgba(170, 59, 255, 0.5); */
 
-  /* --sans: system-ui, 'Segoe UI', Roboto, sans-serif; */
-  /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
-  /* --mono: ui-monospace, Consolas, monospace; */
-
   background: var(--bg);
-  /* color: var(--text); */
-  /* font: 18px/145% var(--sans); */
+  color: var(--text);
+  font-family: var(--sans);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: oklch(from var(--text) calc(l * 0.95) c h);
+}
+
+h2 {
+  color: oklch(from var(--text) calc(l * 0.9) c h);
+}
+
+h3 {
+  color: oklch(from var(--text) calc(l * 0.8) c h);
+}
+
+h4 {
+  color: oklch(from var(--text) calc(l * 0.7) c h);
+}
+
+h5 {
+  color: oklch(from var(--text) calc(l * 0.6) c h);
+}
+
+h6 {
+  color: oklch(from var(--text) calc(l * 0.5) c h);
+}
+
+p {
+  color: oklch(from var(--text) calc(l * 0.85) c h);
+}
+
+del {
+  color: rgb(218, 69, 69);
+}
+
+ins {
+  color: rgb(84, 182, 84);
+  text-decoration: none;
+}
+
+mark {
+  padding: 0.15rem 0.25rem;
+  background-color: oklch(from var(--bg) calc(l + 0.95) calc(c + 1) calc(h - 61) / 0.27);
+  color: oklch(from var(--text) calc(l * 0.95) c h);
+}
+
+kbd {
+  padding: 0.2rem 0.35rem;
+  background-color: oklch(from var(--text) calc(l * 0.85) c h);
+  color: var(--bg);
+  border-radius: 0.25rem;
 }
