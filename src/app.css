@@ -88,6 +88,7 @@ blockquote {
   padding: 1rem;
   border-left: 0.25rem solid var(--code-bg);
   border-radius: 0.25rem;
+  color: oklch(from var(--text) calc(l * 0.85) c h);
 }
 
 cite {
