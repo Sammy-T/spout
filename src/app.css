@@ -135,3 +135,7 @@ blockquote {
 cite {
   color: oklch(from var(--text) calc(l * 0.7) c h);
 }
+
+li {
+  margin-bottom: 0.4rem;
+}

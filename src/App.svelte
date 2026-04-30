@@ -1,7 +1,7 @@
 <main>
     <h1>bricks</h1>
 
-    <hr>
+    <hr/>
 
     <h2>Typography</h2>
     <section>
@@ -19,6 +19,7 @@
             Amet nostrud tempor facer odio nonummy congue sit voluptua tempor sit amet kasd et labore labore. At ipsum dolor dolore eos et dolor 
             duo sed magna adipiscing amet erat. Ullamcorper iusto eum commodo diam amet dolore sadipscing illum at aliquyam consequat et. Lorem est 
             dolor dolore dolore facilisis dolore eirmod dolor sit facilisis lorem elitr stet ullamcorper accusam aliquyam ipsum tation.</p>
+        <p>Lorem ipsum dolor <a href="/">sit amet</a>.</p>
     </section>
 
     <h2>Heading Group</h2>
@@ -92,6 +93,21 @@
             <cite>- Smitty Werbenjagermanjensen</cite>
         </footer>
     </blockquote>
+
+    <h2>Lists</h2>
+    <section id="lists">
+        <ol>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ol>
+
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+    </section>
 </main>
 
 <style>
@@ -108,7 +124,7 @@
         border: 2px solid var(--code-bg);
     }
 
-    #inlines {
+    #inlines, #lists {
         display: grid;
         grid-template-columns: repeat(2, auto);
     }
