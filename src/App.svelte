@@ -3,6 +3,7 @@
 
     <hr>
 
+    <h2>Typography</h2>
     <section>
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -14,17 +15,21 @@
         <p>Lorem ipsum dolor sit amet lorem sanctus luptatum accusam dolor sea duis nonummy et amet at et duo vel kasd vero. 
             Amet in et no ipsum invidunt dolores et diam ipsum dignissim sadipscing. Invidunt amet ut elitr diam sanctus imperdiet imperdiet 
             aliquyam sed. Kasd accusam minim accusam amet no nulla nulla quod duo clita tempor invidunt amet takimata duis. Et in feugiat justo 
-            sanctus dolore et lorem vero amet. Soluta dolores elitr erat elitr aliquyam at commodo diam accusam nulla magna autem aliquyam ea. 
+            sanctus dolore et lorem vero amet. Soluta dolores elitr erat elitr aliquyam at commodo diam accusam nulla magna autem aliquyam ea.<br> 
             Amet nostrud tempor facer odio nonummy congue sit voluptua tempor sit amet kasd et labore labore. At ipsum dolor dolore eos et dolor 
             duo sed magna adipiscing amet erat. Ullamcorper iusto eum commodo diam amet dolore sadipscing illum at aliquyam consequat et. Lorem est 
             dolor dolore dolore facilisis dolore eirmod dolor sit facilisis lorem elitr stet ullamcorper accusam aliquyam ipsum tation.</p>
     </section>
 
-    <hgroup>
-        <h2>Heading Group</h2>
-        <p>Lorem ipsum dolor sit amet feugait facilisi labore.</p>
-    </hgroup>
+    <h2>Heading Group</h2>
+    <section>
+        <hgroup>
+            <h2>Nisl sed consetetur</h2>
+            <p>Lorem ipsum dolor sit amet feugait facilisi labore.</p>
+        </hgroup>
+    </section>
 
+    <h2>Inline Elements</h2>
     <section id="inlines">
         <p>
             <abbr title="Abbreviation">Abbr.</abbr>
@@ -79,8 +84,10 @@
         </p>
     </section>
 
+    <h2>Blockquote</h2>
     <blockquote>
-        "He was number 1."
+        "Lorem ipsum dolor sit amet diam amet. Rebum sed aliquyam et dolor nisl dolor et accusam. Justo consetetur 
+        kasd eu nobis dolore ut lorem sea justo invidunt ea magna."
         <footer>
             <cite>- Smitty Werbenjagermanjensen</cite>
         </footer>
@@ -94,7 +101,7 @@
 
     section {
         padding: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         border-radius: 0.25rem;
         border: 2px solid var(--code-bg);
     }
