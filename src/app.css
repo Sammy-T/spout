@@ -7,6 +7,7 @@
 
   --bg: #11151b;
   --text: #ffffff;
+  --para-color: oklch(from var(--text) calc(l * 0.9) c h);
   --code-bg: oklch(from var(--bg) calc(l + 0.1) c h);
   /* --border: #e5e4e7; */
   /* --accent: #aa3bff; */
@@ -14,7 +15,7 @@
   /* --accent-border: rgba(170, 59, 255, 0.5); */
 
   background: var(--bg);
-  color: var(--text);
+  color: var(--para-color);
   font-family: var(--sans);
   font-size: clamp(1.1rem, calc(0.15dvw + 1rem), 1.2rem);
 
@@ -70,7 +71,6 @@ h6 {
 }
 
 p {
-  color: oklch(from var(--text) calc(l * 0.85) c h);
   margin-bottom: 0.5rem;
 }
 
@@ -103,8 +103,8 @@ mark {
 
 kbd {
   padding: 0.2rem 0.35rem;
-  background-color: oklch(from var(--text) calc(l * 0.85) c h);
   color: var(--bg);
+  background-color: var(--para-color);
   border-radius: 0.25rem;
   font-size: clamp(0.75rem, calc(0.15dvw + 0.65rem), 1rem);
 }
@@ -126,7 +126,6 @@ blockquote {
   margin-bottom: 1rem;
   border-left: 0.25rem solid var(--code-bg);
   border-radius: 0.25rem;
-  color: oklch(from var(--text) calc(l * 0.85) c h);
 
   & :last-child {
     margin-top: 0.5rem;
