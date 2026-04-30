@@ -96,7 +96,9 @@
 
 <style>
     main {
+        width: min(920px, 100%);
         padding: 1rem;
+        margin: auto;
     }
 
     section {
