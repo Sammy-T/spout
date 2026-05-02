@@ -108,6 +108,34 @@
             <li>Item 3</li>
         </ul>
     </section>
+
+    <h2>Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Role</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hubert Farnsworth</td>
+                <td>professor@planet.exp</td>
+                <td>Owner</td>
+            </tr>
+            <tr>
+                <td>Turanga Leela</td>
+                <td>leela@planet.exp</td>
+                <td>Captain</td>
+            </tr>
+            <tr>
+                <td>Phillip J. Fry</td>
+                <td>fry@planet.exp</td>
+                <td>Delivery Boy</td>
+            </tr>
+        </tbody>
+    </table>
 </main>
 
 <style>
@@ -127,5 +155,6 @@
     #inlines, #lists {
         display: grid;
         grid-template-columns: repeat(2, auto);
+        gap: 0.5rem;
     }
 </style>

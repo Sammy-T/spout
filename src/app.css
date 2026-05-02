@@ -139,3 +139,47 @@ cite {
 li {
   margin-bottom: 0.4rem;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+
+  --table-border: 2px solid var(--code-bg);
+}
+
+thead {
+  color: oklch(from var(--text) calc(l * 0.5) c h);
+}
+
+tfoot {
+  color: oklch(from var(--text) calc(l * 0.75) c h);
+}
+
+th {
+  text-align: start;
+}
+
+th, td {
+  padding: 0.5rem;
+}
+
+thead tr {
+  border-bottom: var(--table-border);
+  border-bottom-width: 4px;
+}
+
+tbody {
+  tr {
+    border-top: var(--table-border);
+  }
+
+  tr:hover {
+    background-color: oklch(from var(--code-bg) l c h / 0.15);
+  }
+}
+
+tfoot tr {
+  border-top: var(--table-border);
+  border-top-width: 4px;
+}
