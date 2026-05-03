@@ -143,19 +143,22 @@
     <p>Use the same <code>name</code> attribute to only allow one open detail at a time.</p>
     <section>
         <details name="details-example">
-            <summary>vero gubergren dolores</summary>
+            <summary>Detail 1</summary>
             Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam qui lorem vero clita sanctus dolore lorem sit aliquyam. 
             Facilisi ut dolor eos vero.
         </details>
         <details name="details-example">
-            <summary>vero gubergren dolores</summary>
-            Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam qui lorem vero clita sanctus dolore lorem sit aliquyam. 
-            Facilisi ut dolor eos vero.
+            <summary>Detail 2</summary>
+            <p>Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam qui lorem vero clita sanctus dolore lorem sit aliquyam. 
+            Facilisi ut dolor eos vero.</p>
         </details>
         <details name="details-example">
-            <summary>vero gubergren dolores</summary>
-            Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam qui lorem vero clita sanctus dolore lorem sit aliquyam. 
-            Facilisi ut dolor eos vero.
+            <summary>Detail 3</summary>
+            <ul>
+                <li>Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam.</li>
+                <li>Qui lorem vero clita sanctus dolore lorem sit aliquyam.</li>
+                <li>Facilisi ut dolor eos vero.</li>
+            </ul>
         </details>
     </section>
 
