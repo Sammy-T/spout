@@ -200,8 +200,9 @@ summary {
   border-radius: 0.25rem;
   position: relative;
   color: oklch(from var(--text) calc(l * 0.75) c h);
+  cursor: pointer;
 
-  &::marker, ::before {
+  &::marker, &::before {
     content: '';
   }
 
