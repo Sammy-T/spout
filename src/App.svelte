@@ -110,32 +110,34 @@
     </section>
 
     <h2>Table</h2>
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Hubert Farnsworth</td>
-                <td>professor@planet.exp</td>
-                <td>Owner</td>
-            </tr>
-            <tr>
-                <td>Turanga Leela</td>
-                <td>leela@planet.exp</td>
-                <td>Captain</td>
-            </tr>
-            <tr>
-                <td>Phillip J. Fry</td>
-                <td>fry@planet.exp</td>
-                <td>Delivery Boy</td>
-            </tr>
-        </tbody>
-    </table>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hubert Farnsworth</td>
+                    <td>professor@planet.exp</td>
+                    <td>Owner</td>
+                </tr>
+                <tr>
+                    <td>Turanga Leela</td>
+                    <td>leela@planet.exp</td>
+                    <td>Captain</td>
+                </tr>
+                <tr>
+                    <td>Phillip J. Fry</td>
+                    <td>fry@planet.exp</td>
+                    <td>Delivery Boy</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
     <h2>Details</h2>
     <p>Use the same <code>name</code> attribute to only allow one open detail at a time.</p>
@@ -171,6 +173,7 @@
         margin-bottom: 2rem;
         border-radius: 0.25rem;
         border: 2px solid var(--code-bg);
+        overflow-x: auto;
     }
 
     #inlines, #lists {
