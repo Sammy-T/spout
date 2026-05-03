@@ -170,11 +170,11 @@ thead tr {
 }
 
 tbody {
-  tr {
+  & tr {
     border-top: var(--table-border);
   }
 
-  tr:hover {
+  & tr:hover {
     background-color: oklch(from var(--code-bg) l c h / 0.15);
   }
 }
@@ -182,4 +182,36 @@ tbody {
 tfoot tr {
   border-top: var(--table-border);
   border-top-width: 4px;
+}
+
+details[open] {
+  &::details-content {
+    padding: 1rem;
+  }
+
+  & summary::after {
+    transform: rotate(90deg);
+  }
+}
+
+summary {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--code-bg);
+  border-radius: 0.25rem;
+  position: relative;
+  color: oklch(from var(--text) calc(l * 0.75) c h);
+
+  &::marker, ::before {
+    content: '';
+  }
+
+  &::after {
+    content: '▸';
+    position: absolute;
+    right: 1rem;
+  }
+
+  &:hover {
+    background-color: oklch(from var(--code-bg) l c h / 0.15);
+  }
 }

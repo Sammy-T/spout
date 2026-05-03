@@ -136,6 +136,27 @@
             </tr>
         </tbody>
     </table>
+
+    <h2>Details</h2>
+    <p>Use the same <code>name</code> attribute to only allow one open detail at a time.</p>
+    <section>
+        <details name="details-example">
+            <summary>vero gubergren dolores</summary>
+            Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam qui lorem vero clita sanctus dolore lorem sit aliquyam. 
+            Facilisi ut dolor eos vero.
+        </details>
+        <details name="details-example">
+            <summary>vero gubergren dolores</summary>
+            Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam qui lorem vero clita sanctus dolore lorem sit aliquyam. 
+            Facilisi ut dolor eos vero.
+        </details>
+        <details name="details-example">
+            <summary>vero gubergren dolores</summary>
+            Lorem ipsum dolor sit amet eirmod sed blandit dolores accusam qui lorem vero clita sanctus dolore lorem sit aliquyam. 
+            Facilisi ut dolor eos vero.
+        </details>
+    </section>
+
 </main>
 
 <style>
