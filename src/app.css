@@ -8,6 +8,8 @@
   --bg: #11151b;
   --text: #ffffff;
   --para-color: oklch(from var(--text) calc(l * 0.9) c h);
+  --ins-color: rgb(84, 182, 84);
+  --del-color: rgb(218, 69, 69);
   --code-bg: oklch(from var(--bg) calc(l + 0.1) c h);
   --form-el-bg: #b4bdc0;
   --accent: #345183;
@@ -91,11 +93,11 @@ hgroup {
 }
 
 del {
-  color: rgb(218, 69, 69);
+  color: var(--del-color);
 }
 
 ins {
-  color: rgb(84, 182, 84);
+  color: var(--ins-color);
   text-decoration: none;
 }
 
@@ -240,20 +242,6 @@ fieldset {
   margin: 0.5rem 0;
 }
 
-input {
-  &[type="checkbox"], &[type="radio"] {
-    vertical-align: middle;
-  }
-
-  &[type="file"] {
-    padding: 0.5rem 0;
-  }
-
-  &[type="file"], &[type="color"] {
-    border: none;
-  }
-}
-
 input:not([type="radio"], [type="checkbox"], [type="color"], [type="file"]), select, textarea {
   padding: 0.5rem;
   background-color: oklch(from var(--form-el-bg) l c h / 0.15);
@@ -267,6 +255,46 @@ input, select, textarea, button {
 
   &:focus-visible {
     outline: 1px solid oklch(from var(--form-el-bg) l c h / 0.95);
+  }
+}
+
+input {
+  &[type="checkbox"], &[type="radio"] {
+    vertical-align: middle;
+  }
+
+  &[type="file"] {
+    padding: 0.5rem 0;
+  }
+
+  &[type="file"], &[type="color"] {
+    border: none;
+  }
+
+  &+ small {
+    display: none;
+  }
+
+  &[aria-invalid="false"] {
+    margin-bottom: 0.25rem;
+    outline: 1px solid var(--ins-color);
+
+    &+ small {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--ins-color);
+    }
+  }
+
+  &[aria-invalid="true"] {
+    margin-bottom: 0.25rem;
+    outline: 1px solid var(--del-color);
+
+    &+ small {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--del-color);
+    }
   }
 }
 

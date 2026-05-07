@@ -229,7 +229,18 @@
         </form>
     </section>
 
-    <!-- TODO: Form validation states -->
+    <h3>Validation States</h3>
+    <p>Use the <code>aria-invalid</code> attribute to set valid or invalid states.</p>
+    <p>Include a <code>small</code> element directly after the input to display your status message.</p>
+    <section>
+        <form>
+            <input name="valid-input" type="text" value="Valid" aria-invalid="false" />
+            <small>Looks good!</small>
+
+            <input name="invalid-input" type="text" value="Invalid" aria-invalid="true" />
+            <small>Please enter a valid value!</small>
+        </form>
+    </section>
 </main>
 
 <style>
