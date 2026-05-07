@@ -164,7 +164,7 @@
 
     <h2>Forms</h2>
     <section>
-        <form>
+        <form onsubmit={(ev) => ev.preventDefault()}>
             <label for="name">Name</label>
             <input id="name" name="name" type="text" placeholder="Name" autocomplete="name" />
 
