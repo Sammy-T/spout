@@ -221,16 +221,27 @@ summary {
   }
 }
 
+label {
+  display: inline-block;
+  margin-right: 1rem;
+  margin-bottom: 0.25rem;
+}
+
 input:not([type="radio"], [type="checkbox"]), select, textarea {
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 
 fieldset, input, select, textarea {
   border-radius: var(--radius);
 }
 
+fieldset {
+  margin: 0.5rem 0;
+}
+
 input {
-  &[type="checkbox"] {
+  &[type="checkbox"], &[type="radio"] {
     vertical-align: middle;
   }
 
