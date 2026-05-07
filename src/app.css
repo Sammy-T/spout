@@ -249,6 +249,8 @@ input:not([type="radio"], [type="checkbox"], [type="color"], [type="file"]), sel
 }
 
 input, select, textarea, button {
+  font-size: clamp(0.85rem, calc(0.15dvw + 0.74rem), 0.95rem);
+
   &::placeholder {
     color: oklch(from var(--text) calc(l * 0.7) c h);
   }
@@ -300,7 +302,6 @@ input {
 
 select {
   appearance: base-select;
-  font-size: 0.75rem;
 }
 
 ::picker(select) {
@@ -308,6 +309,7 @@ select {
   background-color: oklch(from var(--form-el-bg) calc(l - 0.6) c h);
   border: 1px solid oklch(from var(--form-el-bg) l c h / 0.25);
   border-radius: var(--radius);
+  font-size: clamp(0.85rem, calc(0.15dvw + 0.74rem), 0.95rem);
 }
 
 button, input::file-selector-button {
