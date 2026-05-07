@@ -323,8 +323,14 @@ input::file-selector-button {
   background-color: hsl(from var(--accent) h 25% l);
 }
 
+/* Doesn't work when nested */
 input::file-selector-button:hover {
   background-color: hsl(from var(--accent) h 25% calc(l + 5));
+}
+
+/* Doesn't work when nested */
+input::file-selector-button:active {
+  background-color: hsl(from var(--accent) h 25% calc(l - 5));
 }
 
 button {
@@ -332,5 +338,9 @@ button {
 
   &:hover {
     background-color: hsl(from var(--accent) h s calc(l + 5));
+  }
+
+  &:active {
+    background-color: hsl(from var(--accent) h s calc(l - 5));
   }
 }
