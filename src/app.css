@@ -9,6 +9,9 @@
   --text: #ffffff;
   --para-color: oklch(from var(--text) calc(l * 0.9) c h);
   --code-bg: oklch(from var(--bg) calc(l + 0.1) c h);
+  --form-el-bg: #b4bdc0;
+  --accent: #345183;
+  --radius: 0.25rem;
   /* --border: #e5e4e7; */
   /* --accent: #aa3bff; */
   /* --accent-bg: rgba(170, 59, 255, 0.1); */
@@ -26,6 +29,7 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0;
 }
 
@@ -105,7 +109,7 @@ kbd {
   padding: 0.2rem 0.35rem;
   color: var(--bg);
   background-color: var(--para-color);
-  border-radius: 0.25rem;
+  border-radius: var(--radius);
   font-size: clamp(0.75rem, calc(0.15dvw + 0.65rem), 1rem);
 }
 
@@ -116,7 +120,7 @@ code, pre {
 code {
   padding: 0.25rem;
   background-color: var(--code-bg);
-  border-radius: 0.25rem;
+  border-radius: var(--radius);
   font-size: clamp(0.85rem, calc(0.15dvw + 0.75rem), 1.1rem);
 }
 
@@ -125,7 +129,7 @@ blockquote {
   padding: 1rem;
   margin-bottom: 1rem;
   border-left: 0.25rem solid var(--code-bg);
-  border-radius: 0.25rem;
+  border-radius: var(--radius);
 
   & :last-child {
     margin-top: 0.5rem;
@@ -197,7 +201,7 @@ details[open] {
 summary {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid var(--code-bg);
-  border-radius: 0.25rem;
+  border-radius: var(--radius);
   position: relative;
   color: oklch(from var(--text) calc(l * 0.75) c h);
   cursor: pointer;
@@ -214,5 +218,78 @@ summary {
 
   &:hover {
     background-color: oklch(from var(--code-bg) l c h / 0.15);
+  }
+}
+
+input:not([type="radio"], [type="checkbox"]), select, textarea {
+  width: 100%;
+}
+
+fieldset, input, select, textarea {
+  border-radius: var(--radius);
+}
+
+input {
+  &[type="checkbox"] {
+    vertical-align: middle;
+  }
+
+  &[type="file"] {
+    padding: 0.5rem 0;
+  }
+
+  &[type="file"], &[type="color"] {
+    border: none;
+  }
+}
+
+input:not([type="radio"], [type="checkbox"], [type="color"], [type="file"]), select, textarea {
+  padding: 0.5rem;
+  background-color: oklch(from var(--form-el-bg) l c h / 0.15);
+  border: 1px solid oklch(from var(--form-el-bg) l c h / 0.25);
+}
+
+input, select, textarea, button {
+  &::placeholder {
+    color: oklch(from var(--text) calc(l * 0.7) c h);
+  }
+
+  &:focus-visible {
+    outline: 1px solid oklch(from var(--form-el-bg) l c h / 0.95);
+  }
+}
+
+select {
+  appearance: base-select;
+  font-size: 0.75rem;
+}
+
+::picker(select) {
+  appearance: base-select;
+  background-color: oklch(from var(--form-el-bg) calc(l - 0.6) c h);
+  border: 1px solid oklch(from var(--form-el-bg) l c h / 0.25);
+  border-radius: var(--radius);
+}
+
+button, input::file-selector-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+input::file-selector-button {
+  background-color: hsl(from var(--accent) h 25% l);
+}
+
+input::file-selector-button:hover {
+  background-color: hsl(from var(--accent) h 25% calc(l + 5));
+}
+
+button {
+  background-color: var(--accent);
+
+  &:hover {
+    background-color: hsl(from var(--accent) h s calc(l + 5));
   }
 }

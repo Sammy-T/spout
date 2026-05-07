@@ -162,6 +162,68 @@
         </details>
     </section>
 
+    <h2>Forms</h2>
+    <section>
+        <form>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Name" autocomplete="name" />
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" />
+
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Password" />
+
+            <label for="select">Select</label>
+            <select id="select" name="select">
+                <option value="">Select an option</option>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <option>Option 3</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your message..."></textarea>
+
+            <label for="disabled">Disabled</label>
+            <input id="disabled" name="disabled" type="text" placeholder="Disabled" disabled />
+
+            <label for="file">File</label>
+            <input id="file" name="file" type="file" />
+
+            <label for="datetime">Date and time</label>
+            <input id="datetime" name="datetime" type="datetime-local" />
+
+            <label for="date">Date</label>
+            <input id="date" name="date" type="date" />
+
+            <label for="time">Time</label>
+            <input id="time" name="time" type="time" />
+
+            <label for="color">Color</label>
+            <input id="color" name="color" type="color" />
+
+            <input id="check" name="check" type="checkbox" />
+            <label for="check">I agree to the terms</label>
+
+            <fieldset>
+                <legend>Preference</legend>
+
+                <input id="pref-1" name="pref" type="radio" value="Option-1" checked />
+                <label for="pref-1">Option 1</label>
+
+                <input id="pref-2" name="pref" type="radio" value="Option-2" />
+                <label for="pref-2">Option 2</label>
+
+                <input id="pref-3" name="pref" type="radio" value="Option-3" />
+                <label for="pref-3">Option 3</label>
+            </fieldset>
+
+            <button>Submit</button>
+        </form>
+    </section>
+
+    <!-- TODO: Form validation states -->
 </main>
 
 <style>
