@@ -188,6 +188,12 @@
             <label for="disabled">Disabled</label>
             <input id="disabled" name="disabled" type="text" placeholder="Disabled" disabled />
 
+            <label for="num">Number</label>
+            <input id="num" name="num" type="number" value="1" />
+
+            <label for="range">Range</label>
+            <input id="range" name="range" type="range" />
+
             <label for="file">File</label>
             <input id="file" name="file" type="file" />
 
@@ -204,7 +210,7 @@
             <input id="color" name="color" type="color" />
 
             <input id="check" name="check" type="checkbox" />
-            <label for="check">I agree to the terms</label>
+            <label for="check">Check this box</label>
 
             <fieldset>
                 <legend>Preference</legend>
