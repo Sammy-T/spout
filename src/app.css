@@ -327,6 +327,7 @@ input {
       /* border: 1px solid; */
       border-radius: 50%;
       background: currentColor;
+      transition: left 0.2s ease-in-out;
     }
 
     &:checked {
