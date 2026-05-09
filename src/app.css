@@ -304,8 +304,9 @@ input {
     appearance: none;
     position: relative;
     font-size: inherit;
-    width: 2em;
-    height: 1em;
+    /* border: 1px solid; */
+    width: 2.75em;
+    height: 1.5em;
     border-radius: 1em;
     vertical-align: middle;
     margin: auto;
@@ -320,10 +321,10 @@ input {
       left: 0;
       transform: translate(0, -50%);
       box-sizing: border-box;
-      width: 0.7em;
-      height: 0.7em;
-      margin: 0 0.15em;
-      border: 1px solid;
+      width: 1em;
+      height: 1em;
+      margin: 0 0.25em;
+      /* border: 1px solid; */
       border-radius: 50%;
       background: currentColor;
     }
@@ -332,7 +333,7 @@ input {
       background-color: var(--accent);
 
       &::before {
-        left: 1em;
+        left: 1.25em;
       }
     }
   }
