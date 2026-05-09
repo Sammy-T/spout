@@ -229,6 +229,14 @@
         </form>
     </section>
 
+    <h3>Switch</h3>
+    <section>
+        <form>
+            <input id="switch" name="switch" type="checkbox" role="switch" />
+            <label for="switch">Switch this</label>
+        </form>
+    </section>
+
     <h3>Validation States</h3>
     <p>Use the <code>aria-invalid</code> attribute to set valid or invalid states.</p>
     <p>Include a <code>small</code> element directly after the input to display your status message.</p>
