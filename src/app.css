@@ -306,10 +306,10 @@ input {
     font-size: inherit;
     width: 2em;
     height: 1em;
-    border: 1px solid;
     border-radius: 1em;
     vertical-align: middle;
     margin: auto;
+    background-color: hsl(from var(--accent) h calc(s * 0.5) l);
     color: inherit;
     cursor: pointer;
 
@@ -328,8 +328,12 @@ input {
       background: currentColor;
     }
 
-    &:checked::before {
-      left: 1em;
+    &:checked {
+      background-color: var(--accent);
+
+      &::before {
+        left: 1em;
+      }
     }
   }
 }
