@@ -334,7 +334,7 @@ input {
       background-color: var(--accent);
 
       &::before {
-        left: 1.05em;
+        left: 1.15em;
       }
     }
   }
