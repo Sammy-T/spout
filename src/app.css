@@ -11,7 +11,7 @@
   --ins-color: rgb(84, 182, 84);
   --del-color: rgb(218, 69, 69);
   --code-bg: oklch(from var(--bg) calc(l + 0.1) c h);
-  --form-el-bg: #b4bdc0;
+  --form-el-bg: hsl(from #345183 h calc(s * 0.35) l);
   --accent: #345183;
   --radius: 0.25rem;
   /* --border: #e5e4e7; */
@@ -244,8 +244,8 @@ fieldset {
 
 input:not([type="radio"], [type="checkbox"], [type="color"], [type="file"]), select, textarea {
   padding: 0.5rem;
-  background-color: oklch(from var(--form-el-bg) l c h / 0.15);
-  border: 1px solid oklch(from var(--form-el-bg) l c h / 0.25);
+  background-color: hsl(from var(--form-el-bg) h s calc(l * 0.5));
+  border: 1px solid hsl(from var(--form-el-bg) h s calc(l * 0.85));
 }
 
 input, select, textarea, button {
@@ -256,7 +256,7 @@ input, select, textarea, button {
   }
 
   &:focus-visible {
-    outline: 1px solid oklch(from var(--form-el-bg) l c h / 0.95);
+    outline: 1px solid hsl(from var(--form-el-bg) h s calc(l * 2));
   }
 }
 
@@ -346,8 +346,8 @@ select {
 
 ::picker(select) {
   appearance: base-select;
-  background-color: oklch(from var(--form-el-bg) calc(l - 0.6) c h);
-  border: 1px solid oklch(from var(--form-el-bg) l c h / 0.25);
+  background-color: hsl(from var(--form-el-bg) h s calc(l * 0.3));
+  border: 1px solid hsl(from var(--form-el-bg) h s calc(l * 1.25) / 0.5);
   border-radius: var(--radius);
   font-size: clamp(0.85rem, calc(0.15dvw + 0.74rem), 0.95rem);
 }
