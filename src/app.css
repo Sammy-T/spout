@@ -384,3 +384,8 @@ button {
     background-color: hsl(from var(--accent) h s calc(l - 5));
   }
 }
+
+meter {
+  width: 100%;
+  margin-bottom: 0.25rem;
+}

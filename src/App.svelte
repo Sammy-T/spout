@@ -249,6 +249,13 @@
             <small>Please enter a valid value!</small>
         </form>
     </section>
+
+    <h2>Meter</h2>
+    <section>
+        <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.8">80%</meter>
+        <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.5">50%</meter>
+        <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.2">20%</meter>
+    </section>
 </main>
 
 <style>
