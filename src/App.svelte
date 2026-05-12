@@ -250,6 +250,15 @@
         </form>
     </section>
 
+    <h2>Progress</h2>
+    <section>
+        <label for="prog-determ">Determinate</label>
+        <progress id="prog-determ" value="0.75"></progress>
+
+        <label for="prog-indeterm">Indeterminate</label>
+        <progress id="prog-indeterm"></progress>
+    </section>
+
     <h2>Meter</h2>
     <section>
         <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.8">80%</meter>
