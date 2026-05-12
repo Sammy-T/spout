@@ -7,12 +7,14 @@
 
   --bg: #11151b;
   --text: #ffffff;
+  --accent: #345183;
   --para-color: oklch(from var(--text) calc(l * 0.9) c h);
   --ins-color: rgb(84, 182, 84);
   --del-color: rgb(218, 69, 69);
   --code-bg: oklch(from var(--bg) calc(l + 0.1) c h);
   --form-el-bg: hsl(from #345183 h calc(s * 0.35) l);
-  --accent: #345183;
+  --progress-bg: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5));
+  --progress-color: hsl(from var(--accent) h s calc(l * 1.5));
   --radius: 0.25rem;
   /* --border: #e5e4e7; */
   /* --accent: #aa3bff; */
@@ -385,15 +387,12 @@ button {
   }
 }
 
-meter, progress {
+progress, meter {
   width: 100%;
   margin-bottom: 0.25rem;
 }
 
 progress {
-  --progress-bg: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5));
-  --progress-color: hsl(from var(--accent) h s calc(l * 1.5));
-
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -429,6 +428,52 @@ progress:indeterminate {
   &::-moz-progress-bar {
     background: var(--progress-indeterm-bg);
     animation: progress-indeterminate 2s linear infinite;
+  }
+}
+
+meter {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 0.5rem;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--progress-bg);
+  overflow: hidden;
+
+  &::-webkit-meter-bar {
+    height: 0.5rem;
+    background: var(--progress-bg);
+  }
+
+  &::-webkit-meter-optimum-value {
+    background: var(--ins-color);
+    border-radius: var(--radius);
+  }
+
+  &::-webkit-meter-suboptimum-value {
+    background: rgb(255, 165, 0);
+    border-radius: var(--radius);
+  }
+
+  &::-webkit-meter-even-less-good-value {
+    background: var(--del-color);
+    border-radius: var(--radius);
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar {
+    background: var(--ins-color);
+    border-radius: var(--radius);
+  }
+
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    background: rgb(255, 165, 0);
+    border-radius: var(--radius);
+  }
+
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    background: var(--del-color);
+    border-radius: var(--radius);
   }
 }
 
