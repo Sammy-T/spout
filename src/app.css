@@ -371,6 +371,7 @@ button, input::file-selector-button {
 
 input::file-selector-button {
   background-color: hsl(from var(--accent) h 25% l);
+  margin-right: 1rem;
 }
 
 /* Doesn't work when nested */
