@@ -180,10 +180,14 @@ thead tr {
 tbody {
   & tr {
     border-top: var(--table-border);
+
+    &:nth-child(even) {
+      background-color: oklch(from var(--code-bg) l c h / 0.25);
+    }
   }
 
   & tr:hover {
-    background-color: oklch(from var(--code-bg) l c h / 0.15);
+    background-color: hsl(from var(--accent) h s l / 0.15);
   }
 }
 
