@@ -271,12 +271,16 @@ input {
     vertical-align: middle;
   }
 
+  &[type="file"], &[type="color"] {
+    border: none;
+  }
+
   &[type="file"] {
     padding: 0.5rem 0;
   }
 
-  &[type="file"], &[type="color"] {
-    border: none;
+  &[type="color"] {
+    background-color: hsl(from var(--form-el-bg) h s calc(l * 0.75));
   }
 
   &+ small {
