@@ -8,6 +8,7 @@
   --bg: #11151b;
   --text: #ffffff;
   --accent: #345183;
+  --secondary: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.65));
   --para-color: oklch(from var(--text) calc(l * 0.9) c h);
   --ins-color: rgb(84, 182, 84);
   --del-color: rgb(218, 69, 69);
@@ -391,11 +392,36 @@ button {
   background-color: var(--accent);
 
   &:hover {
-    background-color: hsl(from var(--accent) h s calc(l + 5));
+    background-color: hsl(from var(--accent) h s calc(l * 1.15));
   }
 
   &:active {
-    background-color: hsl(from var(--accent) h s calc(l - 5));
+    background-color: hsl(from var(--accent) h s calc(l * 0.85));
+  }
+
+  &.secondary {
+    background-color: var(--secondary);
+
+    &:hover {
+      background-color: hsl(from var(--secondary) h s calc(l * 1.15));
+    }
+
+    &:active {
+      background-color: hsl(from var(--secondary) h s calc(l * 0.85));
+    }
+  }
+
+  &.outline {
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+
+    &:hover {
+      background-color: hsl(from var(--secondary) h s l / 0.4);
+    }
+
+    &:active {
+      background-color: hsl(from var(--secondary) h s calc(l * 0.5) / 0.5);
+    }
   }
 }
 

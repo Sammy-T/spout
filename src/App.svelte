@@ -162,6 +162,13 @@
         </details>
     </section>
 
+    <h2>Button</h2>
+    <section>
+        <button>Primary</button>
+        <button class="secondary">Secondary</button>
+        <button class="outline">Outline</button>
+    </section>
+
     <h2>Forms</h2>
     <section>
         <form onsubmit={(ev) => ev.preventDefault()}>
@@ -302,7 +309,7 @@
             <p>Click outside, press Escape, or click the button to close.</p>
 
             <footer>
-                <button command="close" commandfor="my-dialog">Close</button>
+                <button class="outline" command="close" commandfor="my-dialog">Close</button>
             </footer>
         </dialog>
     </section>
