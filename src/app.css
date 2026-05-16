@@ -513,6 +513,35 @@ article {
   }
 }
 
+dialog {
+  padding: 1rem;
+  margin: auto;
+  background-color: hsl(from var(--bg) h s calc(l * 1.25));
+  border: 2px solid var(--code-bg);
+  border-radius: var(--radius);
+
+  &::backdrop {
+    background-color: hsl(from black h s l / 0.25);
+    backdrop-filter: blur(8px);
+  }
+
+  & > header {
+    margin-bottom: 1.5rem;
+
+    & * {
+      margin: 0;
+    }
+
+    & p {
+      color: oklch(from var(--text) calc(l * 0.65) c h);
+    }
+  }
+
+  & > footer {
+    margin-top: 1.5rem;
+  }
+}
+
 @keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;

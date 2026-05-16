@@ -287,6 +287,25 @@
             <p>The card content.</p>
         </article>
     </section>
+
+    <h2>Dialog</h2>
+    <section>
+        <button command="show-modal" commandfor="my-dialog">Show Dialog</button>
+
+        <dialog id="my-dialog" closedby="any">
+            <header>
+                <h3>Dialog Title</h3>
+                <p>With a dialog description.</p>
+            </header>
+
+            <p>The dialog content.</p>
+            <p>Click outside, press Escape, or click the button to close.</p>
+
+            <footer>
+                <button command="close" commandfor="my-dialog">Close</button>
+            </footer>
+        </dialog>
+    </section>
 </main>
 
 <style>
