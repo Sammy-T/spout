@@ -275,6 +275,18 @@
         <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.5">50%</meter>
         <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.2">20%</meter>
     </section>
+
+    <h2>Card</h2>
+    <section>
+        <article>
+            <header>
+                <h3>Card Title</h3>
+                <p>With a card description.</p>
+            </header>
+
+            <p>The card content.</p>
+        </article>
+    </section>
 </main>
 
 <style>
