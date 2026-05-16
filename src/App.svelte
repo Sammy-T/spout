@@ -239,14 +239,24 @@
 
     <h3>Validation States</h3>
     <p>Use the <code>aria-invalid</code> attribute to set valid or invalid states.</p>
-    <p>Include a <code>small</code> element directly after the input to display your status message.</p>
+    <p>
+        Include an element of class <code>status</code> directly after the input with 
+        child elements containing <code>data-valid</code> or <code>data-invalid</code> attributes 
+        to display your status messages.
+    </p>
     <section>
         <form>
-            <input name="valid-input" type="text" value="Valid" aria-invalid="false" />
-            <small>Looks good!</small>
+            <input name="valid-input" type="text" value="Valid" aria-invalid="false" aria-describedby="status-1" />
+            <small id="status-1" class="status">
+                <span data-valid>Looks good!</span>
+                <span data-invalid>Please enter a valid value!</span>
+            </small>
 
-            <input name="invalid-input" type="text" value="Invalid" aria-invalid="true" />
-            <small>Please enter a valid value!</small>
+            <input name="invalid-input" type="text" value="Invalid" aria-invalid="true" aria-describedby="status-2" />
+            <small id="status-2" class="status">
+                <span data-valid>Looks good!</span>
+                <span data-invalid>Please enter a valid value!</span>
+            </small>
         </form>
     </section>
 

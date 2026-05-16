@@ -285,7 +285,7 @@ input {
     padding: 0.25rem;
   }
 
-  &+ small {
+  &+ .status [data-valid], &+ .status [data-invalid] {
     display: none;
   }
 
@@ -293,7 +293,7 @@ input {
     margin-bottom: 0.25rem;
     outline: 1px solid var(--ins-color);
 
-    &+ small {
+    &+ .status [data-valid] {
       display: block;
       margin-bottom: 0.5rem;
       color: var(--ins-color);
@@ -304,7 +304,7 @@ input {
     margin-bottom: 0.25rem;
     outline: 1px solid var(--del-color);
 
-    &+ small {
+    &+ .status [data-invalid] {
       display: block;
       margin-bottom: 0.5rem;
       color: var(--del-color);
