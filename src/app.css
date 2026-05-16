@@ -392,23 +392,27 @@ button {
   background-color: var(--accent);
   margin-bottom: 0.5rem;
 
-  &:hover {
-    background-color: hsl(from var(--accent) h s calc(l * 1.15));
-  }
+  &:not([disabled]) {
+    &:hover {
+      background-color: hsl(from var(--accent) h s calc(l * 1.15));
+    }
 
-  &:active {
-    background-color: hsl(from var(--accent) h s calc(l * 0.85));
+    &:active {
+      background-color: hsl(from var(--accent) h s calc(l * 0.85));
+    }
   }
 
   &.secondary {
     background-color: var(--secondary);
 
-    &:hover {
-      background-color: hsl(from var(--secondary) h s calc(l * 1.15));
-    }
+    &:not([disabled]) {
+      &:hover {
+        background-color: hsl(from var(--secondary) h s calc(l * 1.15));
+      }
 
-    &:active {
-      background-color: hsl(from var(--secondary) h s calc(l * 0.85));
+      &:active {
+        background-color: hsl(from var(--secondary) h s calc(l * 0.85));
+      }
     }
   }
 
@@ -416,12 +420,14 @@ button {
     background-color: transparent;
     border: 2px solid var(--secondary);
 
-    &:hover {
-      background-color: hsl(from var(--secondary) h s l / 0.4);
-    }
+    &:not([disabled]) {
+      &:hover {
+        background-color: hsl(from var(--secondary) h s l / 0.4);
+      }
 
-    &:active {
-      background-color: hsl(from var(--secondary) h s calc(l * 0.5) / 0.5);
+      &:active {
+        background-color: hsl(from var(--secondary) h s calc(l * 0.5) / 0.5);
+      }
     }
   }
 }
