@@ -502,7 +502,7 @@ article {
       margin: 0;
     }
 
-    & :last-child {
+    & p {
       color: oklch(from var(--text) calc(l * 0.65) c h);
     }
   }
