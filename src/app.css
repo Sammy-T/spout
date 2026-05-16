@@ -390,6 +390,7 @@ input::file-selector-button:active {
 
 button {
   background-color: var(--accent);
+  margin-bottom: 0.5rem;
 
   &:hover {
     background-color: hsl(from var(--accent) h s calc(l * 1.15));
