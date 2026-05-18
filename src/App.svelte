@@ -313,6 +313,14 @@
             </footer>
         </dialog>
     </section>
+
+    <h2>Loading</h2>
+    <p>Use the <code>aria-busy</code> attribute to display a spinning indicator.</p>
+    <section>
+        <p aria-busy="true">Loading...</p>
+        <article aria-busy="true"></article>
+        <button aria-busy="true" disabled>Loading</button>
+    </section>
 </main>
 
 <style>
