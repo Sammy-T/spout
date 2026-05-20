@@ -321,6 +321,29 @@
         <article aria-busy="true"></article>
         <button aria-busy="true" disabled>Loading</button>
     </section>
+
+    <h2>Tooltips</h2>
+    <section class="overlapped">
+        <button aria-labelledby="tip-1">
+            Top
+            <div id="tip-1" role="tooltip">Top</div>
+        </button>
+
+        <button aria-labelledby="tip-2">
+            Right
+            <div id="tip-2" role="tooltip" data-placement="right">Right</div>
+        </button>
+
+        <button aria-labelledby="tip-3">
+            Bottom
+            <div id="tip-3" role="tooltip" data-placement="bottom">Bottom</div>
+        </button>
+
+        <button aria-labelledby="tip-4">
+            Left
+            <div id="tip-4" role="tooltip" data-placement="left">Left</div>
+        </button>
+    </section>
 </main>
 
 <style>
@@ -336,6 +359,10 @@
         border-radius: 0.25rem;
         border: 2px solid var(--code-bg);
         overflow-x: auto;
+    }
+
+    .overlapped {
+        overflow: unset;
     }
 
     #inlines, #lists {

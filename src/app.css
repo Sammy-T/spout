@@ -17,6 +17,8 @@
   --form-el-bg: hsl(from #345183 h calc(s * 0.35) l);
   --progress-bg: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5));
   --progress-color: hsl(from var(--accent) h s calc(l * 1.5));
+  --tooltip-bg: rgb(238, 238, 238);
+  --tooltip-color: rgb(52, 52, 52);
   --radius: 0.25rem;
   /* --border: #e5e4e7; */
   /* --accent: #aa3bff; */
@@ -592,6 +594,80 @@ dialog {
     background-image: url(data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2224%22%20height=%2224%22%20viewBox=%220%200%2024%2024%22%20fill=%22none%22%20stroke=%22gray%22%20stroke-width=%222%22%20stroke-linecap=%22round%22%20stroke-linejoin=%22round%22%20class=%22icon%20icon-tabler%20icons-tabler-outline%20icon-tabler-loader-2%22%3E%3Cpath%20stroke=%22none%22%20d=%22M0%200h24v24H0z%22%20fill=%22none%22%20/%3E%3Cpath%20d=%22M12%203a9%209%200%201%200%209%209%22%20/%3E%3C/svg%3E);
     transform-origin: center;
     animation: spin 1.25s linear infinite;
+  }
+}
+
+[aria-labelledby] {
+  position: relative;
+
+  &:hover > [role="tooltip"], &:focus > [role="tooltip"] {
+    display: revert-layer;
+  }
+}
+
+[role="tooltip"] {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 125%;
+  transform: translate(-50%, 0);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius);
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-color);
+  z-index: 99;
+
+  &::after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, 0);
+    content: '';
+    background-color: transparent;
+    color: var(--tooltip-bg);
+    border-top: .3rem solid;
+    border-right: .3rem solid transparent;
+    border-left: .3rem solid transparent;
+  }
+
+  &[data-placement="right"] {
+    left: 110%;
+    top: 50%;
+    bottom: unset;
+    transform: translate(0, -50%);
+
+    &::after {
+      left: unset;
+      right: 94%;
+      top: 50%;
+      transform: translate(0, -50%) rotate(90deg);
+    }
+  }
+
+  &[data-placement="bottom"] {
+    top: 125%;
+    bottom: unset;
+
+    &::after {
+      top: unset;
+      bottom: 100%;
+      transform: translate(-50%, 0) rotate(180deg);
+    }
+  }
+
+  &[data-placement="left"] {
+    left: unset;
+    right: 110%;
+    top: 50%;
+    bottom: unset;
+    transform: translate(0, -50%);
+
+    &::after {
+      left: 94%;
+      top: 50%;
+      transform: translate(0, -50%) rotate(-90deg);
+    }
   }
 }
 
