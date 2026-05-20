@@ -617,6 +617,7 @@ dialog {
   color: var(--tooltip-color);
   opacity: 0;
   z-index: 99;
+  pointer-events: none;
   animation: 0.1s linear 0.5s forwards tooltip-show;
   --tooltip-appear-start: translate(-50%, 50%);
   --tooltip-appear-end: translate(-50%, 0);
