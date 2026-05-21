@@ -152,6 +152,37 @@ li {
   margin-bottom: 0.4rem;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--code-bg);
+  padding: 0.5rem 1rem;
+  background-color: var(--bg);
+
+  * {
+    margin: 0;
+  }
+
+  & a {
+    color: var(--text);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & > ul {
+    display: flex;
+    gap: 1rem;
+
+    & li {
+      list-style: none;
+    }
+  }
+}
+
 table {
   width: 100%;
   border-collapse: collapse;

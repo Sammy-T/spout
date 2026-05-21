@@ -1,8 +1,13 @@
+<nav id="main-nav">
+    <a href="/"><h1>bricks</h1></a>
+
+    <ul>
+        <li><a href="#">GH</a></li>
+        <li><a href="#">Temp</a></li>
+    </ul>
+</nav>
+
 <main>
-    <h1>bricks</h1>
-
-    <hr/>
-
     <h2>Typography</h2>
     <section>
         <h1>Heading 1</h1>
@@ -11,6 +16,7 @@
         <h4>Heading 4</h4>
         <h5>Heading 5</h5>
         <h6>Heading 6</h6>
+        <hr/>
         <p>Lorem ipsum dolor sit amet vel dolore dolore aliquyam diam dolore nisl autem est accusam dignissim et eirmod.</p>
         <p>Lorem ipsum dolor sit amet lorem sanctus luptatum accusam dolor sea duis nonummy et amet at et duo vel kasd vero. 
             Amet in et no ipsum invidunt dolores et diam ipsum dignissim sadipscing. Invidunt amet ut elitr diam sanctus imperdiet imperdiet 
@@ -349,6 +355,13 @@
 </main>
 
 <style>
+    #main-nav {
+        width: min(1920px, 100%);
+        margin: auto;
+        position: sticky;
+        top: 0;
+    }
+
     main {
         width: min(920px, 100%);
         padding: 1rem;
