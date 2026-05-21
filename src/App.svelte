@@ -324,6 +324,8 @@
 
     <h2>Tooltips</h2>
     <section class="overlapped">
+        <p>Tooltip on a <a href="#" aria-labelledby="tip-link">link<span id="tip-link" role="tooltip">Tooltip</span></a>.</p>
+
         <button aria-labelledby="tip-1">
             Top
             <div id="tip-1" role="tooltip">Top</div>
