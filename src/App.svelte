@@ -364,6 +364,17 @@
     </section>
 </main>
 
+<dialog id="mobile-menu" closedby="any">
+    <aside>
+        <nav>
+            <ul>
+                <li><a href="#">Wumbo</a></li>
+                <li><a href="#">Wumboing</a></li>
+            </ul>
+        </nav>
+    </aside>
+</dialog>
+
 <style>
     #main-nav {
         width: min(1920px, 100%);

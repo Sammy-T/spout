@@ -598,6 +598,8 @@ article {
 }
 
 dialog {
+  max-height: 100dvh;
+  max-width: 100dvw;
   padding: 1rem;
   margin: auto;
   background-color: hsl(from var(--bg) h s calc(l * 1.25));
@@ -623,6 +625,23 @@ dialog {
 
   & > footer {
     margin-top: 1.5rem;
+  }
+
+  &:has(> aside) {
+    height: 100dvh;
+    margin: unset;
+    padding: 0;
+
+    & aside {
+      & nav {
+        background-color: transparent;
+        border-bottom: none;
+
+        & ul {
+          flex-direction: column;
+        }
+      }
+    }
   }
 }
 
