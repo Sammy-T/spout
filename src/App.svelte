@@ -1,5 +1,12 @@
+<script>
+    import icMenu from './assets/menu-2.svg?raw';
+</script>
+
 <nav id="main-nav">
-    <a href="/"><strong>bricks</strong></a>
+    <ul>
+        <li><button id="menu-btn" class="outline" command="show-modal" commandfor="mobile-menu">{@html icMenu}</button></li>
+        <li><a href="/"><strong>bricks</strong></a></li>
+    </ul>
 
     <ul>
         <li><a href="#">GH</a></li>
