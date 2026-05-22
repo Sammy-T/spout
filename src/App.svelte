@@ -4,7 +4,7 @@
 
 <nav id="main-nav">
     <ul>
-        <li><button id="menu-btn" class="outline" command="show-modal" commandfor="mobile-menu">{@html icMenu}</button></li>
+        <li class="mobile"><button class="outline" command="show-modal" commandfor="mobile-menu">{@html icMenu}</button></li>
         <li><a href="/"><strong>bricks</strong></a></li>
     </ul>
 
@@ -362,6 +362,8 @@
             <div id="tip-4" role="tooltip" data-placement="left">Left</div>
         </button>
     </section>
+
+    <!-- TODO: Nav -->
 </main>
 
 <dialog id="mobile-menu" closedby="any">

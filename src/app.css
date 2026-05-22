@@ -775,3 +775,9 @@ dialog {
     transform: var(--tooltip-appear-end);
   }
 }
+
+@media (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+}
