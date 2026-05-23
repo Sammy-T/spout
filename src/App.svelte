@@ -9,13 +9,17 @@
     </ul>
 
     <ul>
+        <!-- TODO: Links -->
         <li><a href="#">GH</a></li>
         <li><a href="#">Temp</a></li>
     </ul>
 </nav>
 
+<!-- TODO: Create desktop sidebar -->
+
 <main>
     <h1>bricks</h1>
+    <!-- TODO: Desc -->
 
     <hr/>
 
@@ -364,12 +368,16 @@
     </section>
 
     <!-- TODO: Nav -->
+    <h2>Nav</h2>
+    <p>Navs are flex displayed with 'space-between' distributed content.</p>
+    <p>Create a mobile sidebar menu with a <code>dialog</code> containing an <code>aside</code> containing a <code>nav</code>.</p>
 </main>
 
 <dialog id="mobile-menu" closedby="any">
     <aside>
         <nav>
             <ul>
+                <!-- TODO: Links -->
                 <li><a href="#">Wumbo</a></li>
                 <li><a href="#">Wumboing</a></li>
             </ul>
