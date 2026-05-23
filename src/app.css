@@ -631,16 +631,16 @@ dialog {
     height: 100dvh;
     margin: unset;
     padding: 0;
+  }
+}
 
-    & aside {
-      & nav {
-        background-color: transparent;
-        border-bottom: none;
+aside {
+  & nav {
+    background-color: transparent;
+    border-bottom: none;
 
-        & ul {
-          flex-direction: column;
-        }
-      }
+    & ul {
+      flex-direction: column;
     }
   }
 }
@@ -748,6 +748,10 @@ dialog {
   }
 }
 
+.desktop {
+  display: none;
+}
+
 @keyframes progress-indeterminate {
   0% {
     background-position: 200% 0;
@@ -779,5 +783,9 @@ dialog {
 @media (min-width: 768px) {
   .mobile {
     display: none;
+  }
+
+  .desktop {
+    display: revert-layer;
   }
 }
