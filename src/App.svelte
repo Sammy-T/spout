@@ -558,7 +558,9 @@
                 </footer>
             </dialog>
 
-<pre><code>{@render tag('dialog id="my-dialog" closedby="any"')}
+<pre><code>{@render tag('button command="show-modal" commandfor="my-dialog"')}Show Dialog{@render tag('/button')}
+
+{@render tag('dialog id="my-dialog" closedby="any"')}
     {@render tag('header')}
         {@render tag('h3')}Dialog Title{@render tag('/h3')}
         {@render tag('p')}With a dialog description.{@render tag('/p')}
