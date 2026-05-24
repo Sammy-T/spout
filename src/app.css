@@ -329,6 +329,15 @@ input {
     padding: 0.25rem;
   }
 
+  &[type="radio"] {
+    width: 10%;
+
+    &+ label {
+      width: 80%;
+      margin-right: 0;
+    }
+  }
+
   &+ .status [data-valid], &+ .status [data-invalid] {
     display: none;
   }
@@ -781,6 +790,15 @@ aside {
 }
 
 @media (min-width: 768px) {
+  input[type="radio"] {
+    width: revert-layer;
+
+    &+ label {
+      width: revert-layer;
+      margin-right: 1rem;
+    }
+  }
+
   .mobile {
     display: none;
   }
