@@ -2,6 +2,27 @@
     import icMenu from './assets/menu-2.svg?raw';
 </script>
 
+{#snippet links()}
+    <li><a href="#bricks">Bricks</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#heading-group">Heading Group</a></li>
+    <li><a href="#inline-elements">Inline Elements</a></li>
+    <li><a href="#blockquote">Blockquote</a></li>
+    <li><a href="#lists">Lists</a></li>
+    <li><a href="#table">Table</a></li>
+    <li><a href="#details">Details</a></li>
+    <li><a href="#button">Button</a></li>
+    <li><a href="#forms">Forms</a></li>
+    <li><a href="#switch">Switch</a></li>
+    <li><a href="#progress">Progress</a></li>
+    <li><a href="#meter">Meter</a></li>
+    <li><a href="#card">Card</a></li>
+    <li><a href="#dialog">Dialog</a></li>
+    <li><a href="#loading">Loading</a></li>
+    <li><a href="#tooltips">Tooltips</a></li>
+    <li><a href="#nav">Nav</a></li>
+{/snippet}
+
 <nav id="main-nav">
     <ul>
         <li class="mobile"><button class="outline" command="show-modal" commandfor="mobile-menu">{@html icMenu}</button></li>
@@ -15,26 +36,22 @@
     </ul>
 </nav>
 
-<!-- TODO: Create desktop sidebar -->
-
 <main>
     <aside class="desktop">
         <nav>
             <ul>
-                <!-- TODO: Links -->
-                <li><a href="#">Wumbo</a></li>
-                <li><a href="#">Wumboing</a></li>
+                {@render links()}
             </ul>
         </nav>
     </aside>
 
     <div class="contents">
-        <h1>bricks</h1>
+        <h1 id="bricks">bricks</h1>
         <!-- TODO: Desc -->
 
         <hr/>
 
-        <h2>Typography</h2>
+        <h2 id="typography">Typography</h2>
         <section>
             <h1>Heading 1</h1>
             <h2>Heading 2</h2>
@@ -53,7 +70,7 @@
             <p>Lorem ipsum dolor <a href="/">sit amet</a>.</p>
         </section>
 
-        <h2>Heading Group</h2>
+        <h2 id="heading-group">Heading Group</h2>
         <section>
             <hgroup>
                 <h2>Nisl sed consetetur</h2>
@@ -61,7 +78,7 @@
             </hgroup>
         </section>
 
-        <h2>Inline Elements</h2>
+        <h2 id="inline-elements">Inline Elements</h2>
         <section id="inlines">
             <p>
                 <abbr title="Abbreviation">Abbr.</abbr>
@@ -116,7 +133,7 @@
             </p>
         </section>
 
-        <h2>Blockquote</h2>
+        <h2 id="blockquote">Blockquote</h2>
         <blockquote>
             "Lorem ipsum dolor sit amet diam amet. Rebum sed aliquyam et dolor nisl dolor et accusam. Justo consetetur 
             kasd eu nobis dolore ut lorem sea justo invidunt ea magna."
@@ -125,7 +142,7 @@
             </footer>
         </blockquote>
 
-        <h2>Lists</h2>
+        <h2 id="lists">Lists</h2>
         <section id="lists">
             <ol>
                 <li>Item 1</li>
@@ -140,7 +157,7 @@
             </ul>
         </section>
 
-        <h2>Table</h2>
+        <h2 id="table">Table</h2>
         <section>
             <table>
                 <thead>
@@ -170,7 +187,7 @@
             </table>
         </section>
 
-        <h2>Details</h2>
+        <h2 id="details">Details</h2>
         <p>Use the same <code>name</code> attribute to only allow one open detail at a time.</p>
         <section>
             <details name="details-example">
@@ -193,14 +210,14 @@
             </details>
         </section>
 
-        <h2>Button</h2>
+        <h2 id="button">Button</h2>
         <section>
             <button>Primary</button>
             <button class="secondary">Secondary</button>
             <button class="outline">Outline</button>
         </section>
 
-        <h2>Forms</h2>
+        <h2 id="forms">Forms</h2>
         <section>
             <form onsubmit={(ev) => ev.preventDefault()}>
                 <label for="name">Name</label>
@@ -267,7 +284,7 @@
             </form>
         </section>
 
-        <h3>Switch</h3>
+        <h3 id="switch">Switch</h3>
         <section>
             <form>
                 <input id="switch" name="switch" type="checkbox" role="switch" />
@@ -298,7 +315,7 @@
             </form>
         </section>
 
-        <h2>Progress</h2>
+        <h2 id="progress">Progress</h2>
         <section>
             <label for="prog-determ">Determinate</label>
             <progress id="prog-determ" value="0.75"></progress>
@@ -307,14 +324,14 @@
             <progress id="prog-indeterm"></progress>
         </section>
 
-        <h2>Meter</h2>
+        <h2 id="meter">Meter</h2>
         <section>
             <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.8">80%</meter>
             <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.5">50%</meter>
             <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.2">20%</meter>
         </section>
 
-        <h2>Card</h2>
+        <h2 id="card">Card</h2>
         <section>
             <article>
                 <header>
@@ -326,7 +343,7 @@
             </article>
         </section>
 
-        <h2>Dialog</h2>
+        <h2 id="dialog">Dialog</h2>
         <section>
             <button command="show-modal" commandfor="my-dialog">Show Dialog</button>
 
@@ -345,7 +362,7 @@
             </dialog>
         </section>
 
-        <h2>Loading</h2>
+        <h2 id="loading">Loading</h2>
         <p>Use the <code>aria-busy</code> attribute to display a spinning indicator.</p>
         <section>
             <p aria-busy="true">Loading...</p>
@@ -353,7 +370,7 @@
             <button aria-busy="true" disabled>Loading</button>
         </section>
 
-        <h2>Tooltips</h2>
+        <h2 id="tooltips">Tooltips</h2>
         <section class="overlapped">
             <p>Tooltip on a <a href="#" aria-labelledby="tip-link">link<span id="tip-link" role="tooltip">Tooltip</span></a>.</p>
 
@@ -379,7 +396,7 @@
         </section>
 
         <!-- TODO: Nav -->
-        <h2>Nav</h2>
+        <h2 id="nav">Nav</h2>
         <p>Navs are flex displayed with 'space-between' distributed content.</p>
         <p>Create a mobile sidebar menu with a <code>dialog</code> containing an <code>aside</code> containing a <code>nav</code>.</p>
     </div>
@@ -389,15 +406,24 @@
     <aside>
         <nav>
             <ul>
-                <!-- TODO: Links -->
-                <li><a href="#">Wumbo</a></li>
-                <li><a href="#">Wumboing</a></li>
+                {@render links()}
             </ul>
         </nav>
     </aside>
 </dialog>
 
 <style>
+    :global(body) {
+        height: 100dvh;
+        display: grid;
+        grid-template-rows: auto 1fr;
+        overflow: hidden;
+    }
+
+    #mobile-menu::backdrop {
+        backdrop-filter: unset;
+    }
+
     #main-nav {
         width: min(1920px, 100%);
         margin: auto;
@@ -407,10 +433,12 @@
     }
 
     main {
+        height: 100%;
         display: flex;
         align-items: start;
         width: min(1080px, 100%);
         margin: auto;
+        overflow: auto;
 
         & .contents {
             max-width: 100%;
@@ -420,7 +448,11 @@
 
     aside.desktop {
         position: sticky;
-        top: 3rem;
+        max-height: 100%;
+        min-width: 10rem;
+        overflow-x: hidden;
+        overflow-y: auto;
+        top: 0;
     }
 
     section {
