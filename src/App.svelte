@@ -14,6 +14,7 @@
     <li><a href="#button">Button</a></li>
     <li><a href="#forms">Forms</a></li>
     <li><a href="#switch">Switch</a></li>
+    <li><a href="#validation-states">Validation States</a></li>
     <li><a href="#progress">Progress</a></li>
     <li><a href="#meter">Meter</a></li>
     <li><a href="#card">Card</a></li>
@@ -292,7 +293,7 @@
             </form>
         </section>
 
-        <h3>Validation States</h3>
+        <h3 id="validation-states">Validation States</h3>
         <p>Use the <code>aria-invalid</code> attribute to set valid or invalid states.</p>
         <p>
             Include an element of class <code>status</code> directly after the input with 
