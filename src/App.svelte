@@ -1,5 +1,12 @@
 <script>
     import icMenu from './assets/menu-2.svg?raw';
+    import hljs from 'highlight.js/lib/common';
+    import 'highlight.js/styles/github-dark.min.css';
+    import { onMount } from 'svelte';
+
+    onMount(() => {
+        hljs.highlightAll();
+    });
 </script>
 
 {#snippet links()}
@@ -22,6 +29,10 @@
     <li><a href="#loading">Loading</a></li>
     <li><a href="#tooltips">Tooltips</a></li>
     <li><a href="#nav">Nav</a></li>
+{/snippet}
+
+{#snippet tag(/** @type {String} */ name)}
+    &lt;{name}&gt;
 {/snippet}
 
 <nav id="main-nav">
@@ -69,6 +80,14 @@
                 duo sed magna adipiscing amet erat. Ullamcorper iusto eum commodo diam amet dolore sadipscing illum at aliquyam consequat et. Lorem est 
                 dolor dolore dolore facilisis dolore eirmod dolor sit facilisis lorem elitr stet ullamcorper accusam aliquyam ipsum tation.</p>
             <p>Lorem ipsum dolor <a href="/">sit amet</a>.</p>
+
+<pre><code>{@render tag('h1')}Heading 1{@render tag('/h1')}
+{@render tag('h2')}Heading 2{@render tag('/h2')}
+{@render tag('h3')}Heading 3{@render tag('/h3')}
+{@render tag('h4')}Heading 4{@render tag('/h4')}
+{@render tag('h5')}Heading 5{@render tag('/h5')}
+{@render tag('h6')}Heading 6{@render tag('/h6')}
+{@render tag('p')}Paragraph...{@render tag('/p')}</code></pre>
         </section>
 
         <h2 id="heading-group">Heading Group</h2>
@@ -77,6 +96,12 @@
                 <h2>Nisl sed consetetur</h2>
                 <p>Lorem ipsum dolor sit amet feugait facilisi labore.</p>
             </hgroup>
+
+<pre><code>{@render tag('hgroup')}
+    {@render tag('h2')}Nisl sed consetetur{@render tag('/h2')}
+    {@render tag('p')}Lorem ipsum dolor sit amet feugait facilisi labore.{@render tag('/p')}
+{@render tag('/hgroup')}
+</code></pre>
         </section>
 
         <h2 id="inline-elements">Inline Elements</h2>
@@ -135,16 +160,25 @@
         </section>
 
         <h2 id="blockquote">Blockquote</h2>
-        <blockquote>
-            "Lorem ipsum dolor sit amet diam amet. Rebum sed aliquyam et dolor nisl dolor et accusam. Justo consetetur 
-            kasd eu nobis dolore ut lorem sea justo invidunt ea magna."
-            <footer>
-                <cite>- Smitty Werbenjagermanjensen</cite>
-            </footer>
-        </blockquote>
+        <section>
+            <blockquote>
+                "Lorem ipsum dolor sit amet diam amet. Rebum sed aliquyam et dolor nisl dolor et accusam. Justo consetetur 
+                kasd eu nobis dolore ut lorem sea justo invidunt ea magna."
+                <footer>
+                    <cite>- Smitty Werbenjagermanjensen</cite>
+                </footer>
+            </blockquote>
+
+<pre><code>{@render tag('blockquote')}
+    "Lorem ipsum dolor ..."
+    {@render tag('footer')}
+        {@render tag('cite')}- Smitty Werbenjagermanjensen{@render tag('/cite')}
+    {@render tag('/footer')}
+{@render tag('/blockquote')}</code></pre>
+        </section>
 
         <h2 id="lists">Lists</h2>
-        <section id="lists">
+        <section id="list-section">
             <ol>
                 <li>Item 1</li>
                 <li>Item 2</li>
@@ -156,6 +190,18 @@
                 <li>Item 2</li>
                 <li>Item 3</li>
             </ul>
+
+<pre><code>{@render tag('ol')}
+    {@render tag('li')}Item 1{@render tag('/li')}
+    {@render tag('li')}Item 2{@render tag('/li')}
+    {@render tag('li')}Item 3{@render tag('/li')}
+{@render tag('/ol')}</code></pre>
+
+<pre><code>{@render tag('ul')}
+    {@render tag('li')}Item 1{@render tag('/li')}
+    {@render tag('li')}Item 2{@render tag('/li')}
+    {@render tag('li')}Item 3{@render tag('/li')}
+{@render tag('/ul')}</code></pre>
         </section>
 
         <h2 id="table">Table</h2>
@@ -186,6 +232,33 @@
                     </tr>
                 </tbody>
             </table>
+            
+<pre><code>{@render tag('table')}
+    {@render tag('thead')}
+        {@render tag('tr')}
+            {@render tag('th scope="col"')}Name{@render tag('/th')}
+            {@render tag('th scope="col"')}Email{@render tag('/th')}
+            {@render tag('th scope="col"')}Role{@render tag('/th')}
+        {@render tag('/tr')}
+    {@render tag('/thead')}
+    {@render tag('tbody')}
+        {@render tag('tr')}
+            {@render tag('td')}Hubert Farnsworth{@render tag('/td')}
+            {@render tag('td')}professor@planet.exp{@render tag('/td')}
+            {@render tag('td')}Owner{@render tag('/td')}
+        {@render tag('/tr')}
+        {@render tag('tr')}
+            {@render tag('td')}Turanga Leela{@render tag('/td')}
+            {@render tag('td')}leela@planet.exp{@render tag('/td')}
+            {@render tag('td')}Captain{@render tag('/td')}
+        {@render tag('/tr')}
+        {@render tag('tr')}
+            {@render tag('td')}Phillip J. Fry{@render tag('/td')}
+            {@render tag('td')}fry@planet.exp{@render tag('/td')}
+            {@render tag('td')}Delivery Boy{@render tag('/td')}
+        {@render tag('/tr')}
+    {@render tag('/tbody')}
+{@render tag('/table')}</code></pre>
         </section>
 
         <h2 id="details">Details</h2>
@@ -209,6 +282,23 @@
                     <li>Facilisi ut dolor eos vero.</li>
                 </ul>
             </details>
+
+<pre><code>{@render tag('details name="details-example"')}
+    {@render tag('summary')}Detail 1{@render tag('/summary')}
+    Lorem ipsum dolor sit...
+{@render tag('/details')}
+{@render tag('details name="details-example"')}
+    {@render tag('summary')}Detail 2{@render tag('/summary')}
+    {@render tag('p')}Lorem ipsum dolor sit...{@render tag('/p')}
+{@render tag('/details')}
+{@render tag('details name="details-example"')}
+    {@render tag('summary')}Detail 3{@render tag('/summary')}
+    {@render tag('ul')}
+        {@render tag('li')}Lorem ipsum dolor...{@render tag('/li')}
+        {@render tag('li')}Qui lorem vero...{@render tag('/li')}
+        {@render tag('li')}Facilisi ut dolor eos vero.{@render tag('/li')}
+    {@render tag('/ul')}
+{@render tag('/details')}</code></pre>
         </section>
 
         <h2 id="button">Button</h2>
@@ -216,6 +306,10 @@
             <button>Primary</button>
             <button class="secondary">Secondary</button>
             <button class="outline">Outline</button>
+
+<pre><code>{@render tag('button')}Primary{@render tag('/button')}
+{@render tag('button class="secondary"')}Secondary{@render tag('/button')}
+{@render tag('button class="outline"')}Outline{@render tag('/button')}</code></pre>
         </section>
 
         <h2 id="forms">Forms</h2>
@@ -283,6 +377,70 @@
 
                 <button>Submit</button>
             </form>
+
+<pre><code>{@render tag('form')}
+    {@render tag('label for="name"')}Name{@render tag('/label')}
+    {@render tag('input id="name" name="name" type="text" placeholder="Name" autocomplete="name" /')}
+    
+    {@render tag('label for="email"')}Email{@render tag('/label')}
+    {@render tag('input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" /')}
+    
+    {@render tag('label for="password"')}Password{@render tag('/label')}
+    {@render tag('input id="password" name="password" type="password" placeholder="Password" /')}
+    
+    {@render tag('label for="select"')}Select{@render tag('/label')}
+    {@render tag('select id="select" name="select"')}
+        {@render tag('option value=""')}Select an option{@render tag('/option')}
+        {@render tag('option')}Option 1{@render tag('/option')}
+        {@render tag('option')}Option 2{@render tag('/option')}
+        {@render tag('option')}Option 3{@render tag('/option')}
+    {@render tag('/select')}
+    
+    {@render tag('label for="message"')}Message{@render tag('/label')}
+    {@render tag('textarea id="message" name="message" placeholder="Your message..."')}{@render tag('/textarea')}
+    
+    {@render tag('label for="disabled"')}Disabled{@render tag('/label')}
+    {@render tag('input id="disabled" name="disabled" type="text" placeholder="Disabled" disabled /')}
+    
+    {@render tag('label for="num"')}Number{@render tag('/label')}
+    {@render tag('input id="num" name="num" type="number" value="1" /')}
+    
+    {@render tag('label for="range"')}Range{@render tag('/label')}
+    {@render tag('input id="range" name="range" type="range" /')}
+    
+    {@render tag('label for="file"')}File{@render tag('/label')}
+    {@render tag('input id="file" name="file" type="file" /')}
+    
+    {@render tag('label for="datetime"')}Date and time{@render tag('/label')}
+    {@render tag('input id="datetime" name="datetime" type="datetime-local" /')}
+    
+    {@render tag('label for="date"')}Date{@render tag('/label')}
+    {@render tag('input id="date" name="date" type="date" /')}
+    
+    {@render tag('label for="time"')}Time{@render tag('/label')}
+    {@render tag('input id="time" name="time" type="time" /')}
+    
+    {@render tag('label for="color"')}Color{@render tag('/label')}
+    {@render tag('input id="color" name="color" type="color" /')}
+    
+    {@render tag('input id="check" name="check" type="checkbox" /')}
+    {@render tag('label for="check"')}Check this box{@render tag('/label')}
+    
+    {@render tag('fieldset')}
+        {@render tag('legend')}Preference{@render tag('/legend')}
+        
+        {@render tag('input id="pref-1" name="pref" type="radio" value="Option-1" checked /')}
+        {@render tag('label for="pref-1"')}Option 1{@render tag('/label')}
+        
+        {@render tag('input id="pref-2" name="pref" type="radio" value="Option-2" /')}
+        {@render tag('label for="pref-2"')}Option 2{@render tag('/label')}
+        
+        {@render tag('input id="pref-3" name="pref" type="radio" value="Option-3" /')}
+        {@render tag('label for="pref-3"')}Option 3{@render tag('/label')}
+    {@render tag('/fieldset')}
+    
+    {@render tag('button')}Submit{@render tag('/button')}
+{@render tag('/form')}</code></pre>
         </section>
 
         <h3 id="switch">Switch</h3>
@@ -291,6 +449,9 @@
                 <input id="switch-this" name="switch-this" type="checkbox" role="switch" />
                 <label for="switch-this">Switch this</label>
             </form>
+
+<pre><code>{@render tag('input id="switch-this" name="switch-this" type="checkbox" role="switch" /')}
+{@render tag('label for="switch-this"')}Switch this{@render tag('/label')}</code></pre>
         </section>
 
         <h3 id="validation-states">Validation States</h3>
@@ -314,6 +475,18 @@
                     <span data-invalid>Please enter a valid value!</span>
                 </small>
             </form>
+
+<pre><code>{@render tag('input name="valid-input" type="text" value="Valid" aria-invalid="false" aria-describedby="status-1" /')}
+{@render tag('small id="status-1" class="status"')}
+    {@render tag('span data-valid')}Looks good!{@render tag('/span')}
+    {@render tag('span data-invalid')}Please enter a valid value!{@render tag('/span')}
+{@render tag('/small')}
+
+{@render tag('input name="invalid-input" type="text" value="Invalid" aria-invalid="true" aria-describedby="status-2" /')}
+{@render tag('small id="status-2" class="status"')}
+    {@render tag('span data-valid')}Looks good!{@render tag('/span')}
+    {@render tag('span data-invalid')}Please enter a valid value!{@render tag('/span')}
+{@render tag('/small')}</code></pre>
         </section>
 
         <h2 id="progress">Progress</h2>
@@ -323,6 +496,14 @@
 
             <label for="prog-indeterm">Indeterminate</label>
             <progress id="prog-indeterm"></progress>
+
+<pre><code>
+{@render tag('label for="prog-determ"')}Determinate{@render tag('/label')}
+{@render tag('progress id="prog-determ" value="0.75"')}{@render tag('/progress')}
+
+{@render tag('label for="prog-indeterm"')}Indeterminate{@render tag('/label')}
+{@render tag('progress id="prog-indeterm"')}{@render tag('/progress')}
+</code></pre>
         </section>
 
         <h2 id="meter">Meter</h2>
@@ -330,6 +511,10 @@
             <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.8">80%</meter>
             <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.5">50%</meter>
             <meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.2">20%</meter>
+
+<pre><code>{@render tag('meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.8"')}80%{@render tag('/meter')}
+{@render tag('meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.5"')}50%{@render tag('/meter')}
+{@render tag('meter min="0" max="1" low="0.26" high="0.75" optimum="1" value="0.2"')}20%{@render tag('/meter')}</code></pre>
         </section>
 
         <h2 id="card">Card</h2>
@@ -342,6 +527,17 @@
 
                 <p>The card content.</p>
             </article>
+
+<pre><code>
+{@render tag('article')}
+    {@render tag('header')}
+        {@render tag('h3')}Card Title{@render tag('/h3')}
+        {@render tag('p')}With a card description.{@render tag('/p')}
+    {@render tag('/header')}
+    
+    {@render tag('p')}The card content.{@render tag('/p')}
+{@render tag('/article')}
+</code></pre>
         </section>
 
         <h2 id="dialog">Dialog</h2>
@@ -361,6 +557,20 @@
                     <button class="outline" command="close" commandfor="my-dialog">Close</button>
                 </footer>
             </dialog>
+
+<pre><code>{@render tag('dialog id="my-dialog" closedby="any"')}
+    {@render tag('header')}
+        {@render tag('h3')}Dialog Title{@render tag('/h3')}
+        {@render tag('p')}With a dialog description.{@render tag('/p')}
+    {@render tag('/header')}
+    
+    {@render tag('p')}The dialog content.{@render tag('/p')}
+    {@render tag('p')}Click outside, press Escape, or click the button to close.{@render tag('/p')}
+    
+    {@render tag('footer')}
+        {@render tag('button class="outline" command="close" commandfor="my-dialog"')}Close{@render tag('/button')}
+    {@render tag('/footer')}
+{@render tag('/dialog')}</code></pre>
         </section>
 
         <h2 id="loading">Loading</h2>
@@ -369,9 +579,15 @@
             <p aria-busy="true">Loading...</p>
             <article aria-busy="true"></article>
             <button aria-busy="true" disabled>Loading</button>
+
+<pre><code>{@render tag('p aria-busy="true"')}Loading...{@render tag('/p')}
+{@render tag('article aria-busy="true"')}{@render tag('/article')}
+{@render tag('button aria-busy="true" disabled')}Loading{@render tag('/button')}</code></pre>
         </section>
 
         <h2 id="tooltips">Tooltips</h2>
+        <p>Use <code>aria-labelledby</code> and <code>role="tooltip"</code> to create a tooltip.</p>
+        <p>Placement can be configured with <code>data-placement</code>.</p>
         <section class="overlapped">
             <p>Tooltip on a <a href="#tooltips" aria-labelledby="tip-link">link<span id="tip-link" role="tooltip">Tooltip</span></a>.</p>
 
@@ -394,12 +610,59 @@
                 Left
                 <div id="tip-4" role="tooltip" data-placement="left">Left</div>
             </button>
+
+<pre><code>{@render tag('p')}Tooltip on a {@render tag('a href="#tooltips" aria-labelledby="tip-link"')}link{@render tag('span id="tip-link" role="tooltip"')}Tooltip{@render tag('/span')}{@render tag('/a')}.{@render tag('/p')}
+
+{@render tag('button aria-labelledby="tip-1"')}
+    Top
+    {@render tag('div id="tip-1" role="tooltip"')}Top{@render tag('/div')}
+{@render tag('/button')}
+
+{@render tag('button aria-labelledby="tip-2"')}
+    Right
+    {@render tag('div id="tip-2" role="tooltip" data-placement="right"')}Right{@render tag('/div')}
+{@render tag('/button')}
+
+{@render tag('button aria-labelledby="tip-3"')}
+    Bottom
+    {@render tag('div id="tip-3" role="tooltip" data-placement="bottom"')}Bottom{@render tag('/div')}
+{@render tag('/button')}
+
+{@render tag('button aria-labelledby="tip-4"')}
+    Left
+    {@render tag('div id="tip-4" role="tooltip" data-placement="left"')}Left{@render tag('/div')}
+{@render tag('/button')}</code></pre>
         </section>
 
-        <!-- TODO: Nav -->
         <h2 id="nav">Nav</h2>
         <p>Navs are flex displayed with 'space-between' distributed content.</p>
-        <p>Create a mobile sidebar menu with a <code>dialog</code> containing an <code>aside</code> containing a <code>nav</code>.</p>
+
+<pre><code>{@render tag('nav')}
+    {@render tag('ul')}
+        {@render tag('li class="mobile"')}
+            {@render tag('button class="outline" command="show-modal" commandfor="mobile-menu"')}Toggle Mobile{@render tag('/button')}
+        {@render tag('/li')}
+        {@render tag('li')}{@render tag('a href="/"')}{@render tag('strong')}Home{@render tag('/strong')}{@render tag('/a')}{@render tag('/li')}
+    {@render tag('/ul')}
+
+    {@render tag('ul')}
+        {@render tag('li')}{@render tag('a href="#"')}Link 1{@render tag('/a')}{@render tag('/li')}
+        {@render tag('li')}{@render tag('a href="#"')}Link 2{@render tag('/a')}{@render tag('/li')}
+    {@render tag('/ul')}
+{@render tag('/nav')}</code></pre>
+
+<p>Create a toggle-able sidebar menu with a <code>dialog</code>, <code>aside</code>, and <code>nav</code>.</p>
+
+<pre><code>{@render tag('dialog id="mobile-menu" closedby="any"')}
+    {@render tag('aside')}
+        {@render tag('nav')}
+            {@render tag('ul')}
+                {@render tag('li')}{@render tag('a href="#"')}Link 1{@render tag('/a')}{@render tag('/li')}
+                {@render tag('li')}{@render tag('a href="#"')}Link 2{@render tag('/a')}{@render tag('/li')}
+            {@render tag('/ul')}
+        {@render tag('/nav')}
+    {@render tag('/aside')}
+{@render tag('/dialog')}</code></pre>
     </div>
 </main>
 
@@ -468,7 +731,7 @@
         overflow: unset;
     }
 
-    #inlines, #lists {
+    #inlines, #list-section {
         display: grid;
         grid-template-columns: repeat(2, auto);
         gap: 0.5rem;
