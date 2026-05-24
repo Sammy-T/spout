@@ -12,7 +12,7 @@
   --para-color: oklch(from var(--text) calc(l * 0.9) c h);
   --ins-color: rgb(84, 182, 84);
   --del-color: rgb(218, 69, 69);
-  --code-bg: oklch(from var(--bg) calc(l + 0.1) c h);
+  --code-bg: oklch(from var(--bg) calc(l + 0.13) c h);
   --card-bg: hsl(from var(--bg) h s calc(l * 1.75));
   --form-el-bg: hsl(from #345183 h calc(s * 0.35) l);
   --progress-bg: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5));
