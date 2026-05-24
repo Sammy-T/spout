@@ -287,8 +287,8 @@
         <h3 id="switch">Switch</h3>
         <section>
             <form>
-                <input id="switch" name="switch" type="checkbox" role="switch" />
-                <label for="switch">Switch this</label>
+                <input id="switch-this" name="switch-this" type="checkbox" role="switch" />
+                <label for="switch-this">Switch this</label>
             </form>
         </section>
 
