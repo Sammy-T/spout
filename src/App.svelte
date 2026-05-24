@@ -433,15 +433,15 @@
     }
 
     main {
+        width: 100%;
         height: 100%;
         display: flex;
+        justify-content: center;
         align-items: start;
-        width: min(1080px, 100%);
-        margin: auto;
         overflow: auto;
 
         & .contents {
-            max-width: 100%;
+            width: min(920px, 100%);
             padding: 1rem;
         }
     }
