@@ -312,7 +312,7 @@ input, select, textarea, button {
 
 input {
   &[type="checkbox"], &[type="radio"] {
-    vertical-align: middle;
+    margin-bottom: 0.25rem;
   }
 
   &[type="file"], &[type="color"] {
