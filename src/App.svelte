@@ -287,10 +287,12 @@
     {@render tag('summary')}Detail 1{@render tag('/summary')}
     Lorem ipsum dolor sit...
 {@render tag('/details')}
+
 {@render tag('details name="details-example"')}
     {@render tag('summary')}Detail 2{@render tag('/summary')}
     {@render tag('p')}Lorem ipsum dolor sit...{@render tag('/p')}
 {@render tag('/details')}
+
 {@render tag('details name="details-example"')}
     {@render tag('summary')}Detail 3{@render tag('/summary')}
     {@render tag('ul')}
@@ -639,6 +641,7 @@
         <h2 id="nav">Nav</h2>
         <p>Navs are flex displayed with 'space-between' distributed content.</p>
 
+        <section>
 <pre><code>{@render tag('nav')}
     {@render tag('ul')}
         {@render tag('li class="mobile"')}
@@ -652,8 +655,12 @@
         {@render tag('li')}{@render tag('a href="#"')}Link 2{@render tag('/a')}{@render tag('/li')}
     {@render tag('/ul')}
 {@render tag('/nav')}</code></pre>
+        </section>
 
-<p>Create a toggle-able sidebar menu with a <code>dialog</code>, <code>aside</code>, and <code>nav</code>.</p>
+        <p>Create a toggle-able sidebar menu with a <code>dialog</code>, <code>aside</code>, and <code>nav</code>.</p>
+
+        <section>
+        <button command="show-modal" commandfor="mobile-menu">Show Menu</button>
 
 <pre><code>{@render tag('dialog id="mobile-menu" closedby="any"')}
     {@render tag('aside')}
@@ -665,6 +672,7 @@
         {@render tag('/nav')}
     {@render tag('/aside')}
 {@render tag('/dialog')}</code></pre>
+        </section>
     </div>
 </main>
 
