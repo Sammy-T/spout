@@ -2,24 +2,24 @@
   color-scheme: light dark;
 
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
   --mono: ui-monospace, Consolas, monospace;
 
-  --bg: #11151b;
-  --text: #ffffff;
+  --bg: light-dark(#ffffff,#11151b);
+  --text: light-dark(#11151b, #ffffff);
   --accent: #345183;
-  --secondary: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.65));
-  --para-color: oklch(from var(--text) calc(l * 0.9) c h);
+  --secondary: light-dark(hsl(from var(--accent) h calc(s * 0.5) calc(l * 1.25)), hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.65)));
+  --para-color: light-dark(oklch(from var(--text) calc(l * 2) c h), oklch(from var(--text) calc(l * 0.9) c h));;
   --ins-color: rgb(84, 182, 84);
   --del-color: rgb(218, 69, 69);
-  --code-bg: oklch(from var(--bg) calc(l + 0.13) c h);
-  --card-bg: hsl(from var(--bg) h s calc(l * 1.75));
-  --form-el-bg: hsl(from #345183 h calc(s * 0.35) l);
-  --progress-bg: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5));
+  --code-bg: light-dark(oklch(from var(--bg) calc(l - 0.13) c h), oklch(from var(--bg) calc(l + 0.13) c h));
+  --card-bg: light-dark(hsl(from var(--bg) h s calc(l * 0.96)), hsl(from var(--bg) h s calc(l * 1.75)));
+  --form-el-bg: light-dark(hsl(from #345183 h calc(s * 0.35) l), hsl(from #345183 h calc(s * 0.35) l));
+  --progress-bg: light-dark(hsl(from var(--accent) h calc(s * 0.5) calc(l * 2.25)), hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5)));
   --progress-indeterm-bg: var(--progress-bg) linear-gradient(to right, var(--progress-color) 30%, var(--progress-bg) 30%) top left/150% 150% no-repeat;
   --progress-color: hsl(from var(--accent) h s calc(l * 1.5));
-  --tooltip-bg: rgb(238, 238, 238);
-  --tooltip-color: rgb(52, 52, 52);
+  --tooltip-bg: light-dark(rgb(52, 52, 52), rgb(238, 238, 238));
+  --tooltip-color: light-dark(rgb(238, 238, 238), rgb(52, 52, 52));
   --table-border: 2px solid var(--code-bg);
   --radius: 0.25rem;
 
@@ -51,37 +51,37 @@ hr {
 }
 
 h1 {
-  color: oklch(from var(--text) calc(l * 0.95) c h);
+  color: light-dark(oklch(from var(--text) calc(l * 1.75) c h), oklch(from var(--text) calc(l * 0.95) c h));;
   font-size: clamp(1.5rem, calc(0.9dvw + 1rem), 2rem);
   margin-bottom: 1rem;
 }
 
 h2 {
-  color: oklch(from var(--text) calc(l * 0.9) c h);
+  color: light-dark(oklch(from var(--text) calc(l * 2) c h), oklch(from var(--text) calc(l * 0.9) c h));
   font-size: clamp(1.4rem, calc(0.75dvw + 1rem), 1.85rem);
   margin-bottom: 0.9rem;
 }
 
 h3 {
-  color: oklch(from var(--text) calc(l * 0.8) c h);
+  color: light-dark(oklch(from var(--text) calc(l * 2.25) c h), oklch(from var(--text) calc(l * 0.8) c h));
   font-size: clamp(1.3rem, calc(0.6dvw + 1rem), 1.7rem);
   margin-bottom: 0.8rem;
 }
 
 h4 {
-  color: oklch(from var(--text) calc(l * 0.7) c h);
+  color: light-dark(oklch(from var(--text) calc(l * 2.5) c h), oklch(from var(--text) calc(l * 0.7) c h));
   font-size: clamp(1.2rem, calc(0.4dvw + 1rem), 1.55rem);
   margin-bottom: 0.7rem;
 }
 
 h5 {
-  color: oklch(from var(--text) calc(l * 0.6) c h);
+  color: light-dark(oklch(from var(--text) calc(l * 2.75) c h), oklch(from var(--text) calc(l * 0.6) c h));
   font-size: clamp(1.1rem, calc(0.25dvw + 1rem), 1.4rem);
   margin-bottom: 0.6rem;
 }
 
 h6 {
-  color: oklch(from var(--text) calc(l * 0.5) c h);
+  color: light-dark(oklch(from var(--text) calc(l * 3) c h), oklch(from var(--text) calc(l * 0.5) c h));
   font-size: clamp(1.05rem, calc(0.1dvw + 1rem), 1.27rem);
   margin-bottom: 0.5rem;
 }
@@ -98,7 +98,7 @@ hgroup {
   }
 
   & :last-child {
-    color: oklch(from var(--text) calc(l * 0.5) c h);
+    color: light-dark(oklch(from var(--text) calc(l * 3) c h), oklch(from var(--text) calc(l * 0.5) c h));
   }
 }
 
@@ -296,7 +296,7 @@ fieldset {
 
 input:not([type="radio"], [type="checkbox"], [type="color"], [type="file"]), select, textarea {
   padding: 0.5rem;
-  background-color: hsl(from var(--form-el-bg) h s calc(l * 0.5));
+  background-color: light-dark(hsl(from var(--form-el-bg) h s calc(l * 2.5)), hsl(from var(--form-el-bg) h s calc(l * 0.5)));
   border: 1px solid hsl(from var(--form-el-bg) h s calc(l * 0.85));
 }
 
@@ -304,7 +304,7 @@ input, select, textarea, button {
   font-size: clamp(0.85rem, calc(0.15dvw + 0.74rem), 0.95rem);
 
   &::placeholder {
-    color: oklch(from var(--text) calc(l * 0.7) c h);
+    color: light-dark(oklch(from var(--text) calc(l * 3) c h), oklch(from var(--text) calc(l * 0.7) c h));
   }
 
   &:focus-visible {
@@ -326,7 +326,7 @@ input {
   }
 
   &[type="color"] {
-    background-color: hsl(from var(--form-el-bg) h s calc(l * 0.75));
+    background-color: light-dark(hsl(from var(--form-el-bg) h s calc(l * 2.5)), hsl(from var(--form-el-bg) h s calc(l * 0.75)));
     height: 2rem;
     padding: 0.25rem;
   }
@@ -346,6 +346,7 @@ input {
 
   &[aria-invalid="false"] {
     margin-bottom: 0.25rem;
+    border-color: transparent;
     outline: 1px solid var(--ins-color);
 
     &+ .status [data-valid] {
@@ -357,6 +358,7 @@ input {
 
   &[aria-invalid="true"] {
     margin-bottom: 0.25rem;
+    border-color: transparent;
     outline: 1px solid var(--del-color);
 
     &+ .status [data-invalid] {
@@ -376,7 +378,7 @@ input {
     border-radius: 1em;
     vertical-align: middle;
     margin: auto;
-    background-color: hsl(from var(--accent) h calc(s * 0.5) l);
+    background-color: light-dark(hsl(from var(--accent) h calc(s * 0.5) calc(l * 2)), hsl(from var(--accent) h calc(s * 0.5) l));
     color: inherit;
     cursor: pointer;
 
@@ -391,12 +393,12 @@ input {
       height: 0.9em;
       margin: 0 0.25em;
       border-radius: 50%;
-      background: currentColor;
+      background: light-dark(hsl(from currentColor h s calc(l * 4)), currentColor);
       transition: left 0.2s ease-in-out;
     }
 
     &:checked {
-      background-color: var(--accent);
+      background-color: light-dark(hsl(from var(--accent) h s calc(l * 1.5)), var(--accent));
 
       &::before {
         left: 1.15em;
@@ -411,7 +413,7 @@ select {
 
 ::picker(select) {
   appearance: base-select;
-  background-color: hsl(from var(--form-el-bg) h s calc(l * 0.3));
+  background-color: light-dark(hsl(from var(--form-el-bg) h s calc(l * 2.35)), hsl(from var(--form-el-bg) h s calc(l * 0.3)));
   border: 1px solid hsl(from var(--form-el-bg) h s calc(l * 1.25) / 0.5);
   border-radius: var(--radius);
   font-size: clamp(0.85rem, calc(0.15dvw + 0.74rem), 0.95rem);
@@ -425,27 +427,28 @@ button, input::file-selector-button {
 }
 
 input::file-selector-button {
-  background-color: hsl(from var(--accent) h 25% l);
+  background-color: light-dark(hsl(from var(--accent) h calc(s * 0.75) calc(l * 1.75)), hsl(from var(--accent) h calc(s * 0.75) l));
   margin-right: 1rem;
 }
 
 /* Doesn't work when nested */
 input::file-selector-button:hover {
-  background-color: hsl(from var(--accent) h 25% calc(l + 5));
+  background-color: light-dark(hsl(from var(--accent) h calc(s * 0.75) calc(l * 2)), hsl(from var(--accent) h calc(s * 0.75) calc(l * 1.25)));
 }
 
 /* Doesn't work when nested */
 input::file-selector-button:active {
-  background-color: hsl(from var(--accent) h 25% calc(l - 5));
+  background-color: light-dark(hsl(from var(--accent) h calc(s * 0.75) calc(l * 1.5)), hsl(from var(--accent) h calc(s * 0.75) calc(l * 0.75)));
 }
 
 button {
   background-color: var(--accent);
+  color: light-dark(var(--bg), var(--text));
   margin-bottom: 0.5rem;
 
   &:not([disabled]) {
     &:hover {
-      background-color: hsl(from var(--accent) h s calc(l * 1.15));
+      background-color: light-dark(hsl(from var(--accent) h s calc(l * 1.25)), hsl(from var(--accent) h s calc(l * 1.15)));
     }
 
     &:active {
@@ -458,7 +461,7 @@ button {
 
     &:not([disabled]) {
       &:hover {
-        background-color: hsl(from var(--secondary) h s calc(l * 1.15));
+        background-color: light-dark(hsl(from var(--secondary) h s calc(l * 1.25)), hsl(from var(--secondary) h s calc(l * 1.15)));
       }
 
       &:active {
@@ -470,14 +473,15 @@ button {
   &.outline {
     background-color: transparent;
     border: 2px solid var(--secondary);
+    color: var(--text);
 
     &:not([disabled]) {
       &:hover {
-        background-color: hsl(from var(--secondary) h s l / 0.4);
+        background-color: light-dark(hsl(from var(--secondary) h s l / 0.2), hsl(from var(--secondary) h s l / 0.4));
       }
 
       &:active {
-        background-color: hsl(from var(--secondary) h s calc(l * 0.5) / 0.5);
+        background-color: light-dark(hsl(from var(--secondary) h s calc(l * 0.5) / 0.3), hsl(from var(--secondary) h s calc(l * 0.5) / 0.5));
       }
     }
   }
