@@ -11,6 +11,7 @@
 
 {#snippet links()}
     <li><a href="#bricks">Bricks</a></li>
+    <li><a href="#sections">Sections</a></li>
     <li><a href="#typography">Typography</a></li>
     <li><a href="#heading-group">Heading Group</a></li>
     <li><a href="#inline-elements">Inline Elements</a></li>
@@ -62,6 +63,12 @@
         <!-- TODO: Desc -->
 
         <hr/>
+
+        <h2 id="sections">Sections</h2>
+
+        <section>
+            <p>Sections include default padding, bottom margin, and <code>auto</code> horizontal overflow.</p>
+        </section>
 
         <h2 id="typography">Typography</h2>
         <section>
@@ -730,11 +737,8 @@
     }
 
     section {
-        padding: 1rem;
-        margin-bottom: 2rem;
         border-radius: 0.25rem;
         border: 2px solid var(--code-bg);
-        overflow-x: auto;
     }
 
     .overlapped {

@@ -41,6 +41,12 @@
   margin: 0;
 }
 
+section {
+  padding: 1rem;
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
 hr {
   margin: 1rem 0;
   border-color: var(--code-bg);
