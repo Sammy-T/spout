@@ -16,14 +16,12 @@
   --card-bg: hsl(from var(--bg) h s calc(l * 1.75));
   --form-el-bg: hsl(from #345183 h calc(s * 0.35) l);
   --progress-bg: hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5));
+  --progress-indeterm-bg: var(--progress-bg) linear-gradient(to right, var(--progress-color) 30%, var(--progress-bg) 30%) top left/150% 150% no-repeat;
   --progress-color: hsl(from var(--accent) h s calc(l * 1.5));
   --tooltip-bg: rgb(238, 238, 238);
   --tooltip-color: rgb(52, 52, 52);
+  --table-border: 2px solid var(--code-bg);
   --radius: 0.25rem;
-  /* --border: #e5e4e7; */
-  /* --accent: #aa3bff; */
-  /* --accent-bg: rgba(170, 59, 255, 0.1); */
-  /* --accent-border: rgba(170, 59, 255, 0.5); */
 
   background: var(--bg);
   color: var(--para-color);
@@ -202,8 +200,6 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 1rem;
-
-  --table-border: 2px solid var(--code-bg);
 }
 
 thead {
@@ -375,7 +371,6 @@ input {
     appearance: none;
     position: relative;
     font-size: inherit;
-    /* border: 1px solid; */
     width: 2.5em;
     height: 1.25em;
     border-radius: 1em;
@@ -395,7 +390,6 @@ input {
       width: 0.9em;
       height: 0.9em;
       margin: 0 0.25em;
-      /* border: 1px solid; */
       border-radius: 50%;
       background: currentColor;
       transition: left 0.2s ease-in-out;
@@ -528,8 +522,6 @@ progress {
 }
 
 progress:indeterminate {
-  --progress-indeterm-bg: var(--progress-bg) linear-gradient(to right, var(--progress-color) 30%, var(--progress-bg) 30%) top left/150% 150% no-repeat;
-
   &::-webkit-progress-bar {
     background: var(--progress-indeterm-bg);
     animation: 2s linear infinite progress-indeterminate;
