@@ -1,10 +1,19 @@
 <script>
     import icMenu from './assets/menu-2.svg?raw';
     import hljs from 'highlight.js/lib/common';
-    import 'highlight.js/styles/github-dark.min.css';
+    import codeStylesLight from 'highlight.js/styles/github.min.css?raw';
+    import codeStylesDark from 'highlight.js/styles/github-dark.min.css?raw';
     import { onMount } from 'svelte';
 
     onMount(() => {
+        const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        const style = document.createElement('style');
+        style.innerHTML = (isDark) ? codeStylesDark : codeStylesLight;
+
+        const head = document.querySelector('head');
+        head?.appendChild(style);
+
         hljs.highlightAll();
     });
 </script>
