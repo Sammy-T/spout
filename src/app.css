@@ -6,7 +6,7 @@
   --mono: ui-monospace, Consolas, monospace;
 
   --bg: light-dark(#ffffff,#11151b);
-  --text: light-dark(#11151b, #ffffff);
+  --text: contrast-color(var(--bg));
   --accent: #345183;
   --secondary: light-dark(oklch(from var(--accent) calc(l * 1.45) calc(c * 0.5) h), oklch(from var(--accent) calc(l * 0.85) calc(c * 0.5) h));
   --para-color: light-dark(oklch(from var(--text) calc(l * 2) c h), oklch(from var(--text) calc(l * 0.9) c h));
@@ -81,7 +81,7 @@ h5 {
 }
 
 h6 {
-  color: light-dark(oklch(from var(--text) calc(l * 3) c h), oklch(from var(--text) calc(l * 0.5) c h));
+  color: light-dark(oklch(from var(--text) calc(l * 0.5) c h), oklch(from var(--text) calc(l * 0.5) c h));
   font-size: clamp(1.05rem, calc(0.1dvw + 1rem), 1.27rem);
   margin-bottom: 0.5rem;
 }
@@ -296,7 +296,7 @@ fieldset {
 
 input:not([type="radio"], [type="checkbox"], [type="color"], [type="file"]), select, textarea {
   padding: 0.5rem;
-  background-color: light-dark(oklch(from var(--form-el-bg) calc(l * 2) calc(c * 0.65) h), oklch(from var(--form-el-bg) calc(l * 0.75) calc(c * 0.75) h));
+  background-color: light-dark(oklch(from var(--form-el-bg) calc(l * 2.15) calc(c * 0.5) h), oklch(from var(--form-el-bg) calc(l * 0.75) calc(c * 0.75) h));
   border: 1px solid oklch(from var(--form-el-bg) calc(l * 1.2) c h);
 }
 
@@ -393,7 +393,8 @@ input {
       height: 0.9em;
       margin: 0 0.25em;
       border-radius: 50%;
-      background: light-dark(oklch(from currentColor calc(l * 4) c h), currentColor);
+      /* background: light-dark(oklch(from currentColor calc(l * 4) c h), currentColor); */
+      background: white;
       transition: left 0.2s ease-in-out;
     }
 
@@ -472,7 +473,7 @@ button {
 
   &.outline {
     background-color: transparent;
-    border: 2px solid var(--secondary);
+    border: 2px solid oklch(from var(--secondary) calc(l * 1.25) c h);
     color: var(--text);
 
     &:not([disabled]) {
