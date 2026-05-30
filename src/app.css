@@ -8,16 +8,16 @@
   --bg: light-dark(#ffffff,#11151b);
   --text: light-dark(#11151b, #ffffff);
   --accent: #345183;
-  --secondary: light-dark(hsl(from var(--accent) h calc(s * 0.5) calc(l * 1.25)), hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.65)));
-  --para-color: light-dark(oklch(from var(--text) calc(l * 2) c h), oklch(from var(--text) calc(l * 0.9) c h));;
+  --secondary: light-dark(oklch(from var(--accent) calc(l * 1.45) calc(c * 0.5) h), oklch(from var(--accent) calc(l * 0.85) calc(c * 0.5) h));
+  --para-color: light-dark(oklch(from var(--text) calc(l * 2) c h), oklch(from var(--text) calc(l * 0.9) c h));
   --ins-color: rgb(84, 182, 84);
   --del-color: rgb(218, 69, 69);
   --code-bg: light-dark(oklch(from var(--bg) calc(l - 0.13) c h), oklch(from var(--bg) calc(l + 0.13) c h));
-  --card-bg: light-dark(hsl(from var(--bg) h s calc(l * 0.96)), hsl(from var(--bg) h s calc(l * 1.75)));
-  --form-el-bg: light-dark(hsl(from #345183 h calc(s * 0.35) l), hsl(from #345183 h calc(s * 0.35) l));
-  --progress-bg: light-dark(hsl(from var(--accent) h calc(s * 0.5) calc(l * 2.25)), hsl(from var(--accent) h calc(s * 0.5) calc(l * 0.5)));
+  --card-bg: light-dark(oklch(from var(--bg) calc(l * 0.96) c h), oklch(from var(--bg) calc(l * 1.43) c h));
+  --form-el-bg: light-dark(oklch(from #345183 l calc(c * 0.35) h), oklch(from #345183 l calc(c * 0.35) h));
+  --progress-bg: light-dark(oklch(from var(--accent) calc(l * 1.95) calc(c * 0.15) h), oklch(from var(--accent) calc(l * 0.75) calc(c * 0.25) h));
   --progress-indeterm-bg: var(--progress-bg) linear-gradient(to right, var(--progress-color) 30%, var(--progress-bg) 30%) top left/150% 150% no-repeat;
-  --progress-color: hsl(from var(--accent) h s calc(l * 1.5));
+  --progress-color: oklch(from var(--accent) calc(l * 1.5) c h);
   --tooltip-bg: light-dark(rgb(52, 52, 52), rgb(238, 238, 238));
   --tooltip-color: light-dark(rgb(238, 238, 238), rgb(52, 52, 52));
   --table-border: 2px solid var(--code-bg);
@@ -233,7 +233,7 @@ tbody {
   }
 
   & tr:hover {
-    background-color: hsl(from var(--accent) h s l / 0.15);
+    background-color: oklch(from var(--accent) l c h / 0.15);
   }
 }
 
@@ -296,8 +296,8 @@ fieldset {
 
 input:not([type="radio"], [type="checkbox"], [type="color"], [type="file"]), select, textarea {
   padding: 0.5rem;
-  background-color: light-dark(hsl(from var(--form-el-bg) h s calc(l * 2.5)), hsl(from var(--form-el-bg) h s calc(l * 0.5)));
-  border: 1px solid hsl(from var(--form-el-bg) h s calc(l * 0.85));
+  background-color: light-dark(oklch(from var(--form-el-bg) calc(l * 2) calc(c * 0.65) h), oklch(from var(--form-el-bg) calc(l * 0.75) calc(c * 0.75) h));
+  border: 1px solid oklch(from var(--form-el-bg) calc(l * 1.2) c h);
 }
 
 input, select, textarea, button {
@@ -308,7 +308,7 @@ input, select, textarea, button {
   }
 
   &:focus-visible {
-    outline: 1px solid hsl(from var(--form-el-bg) h s calc(l * 2));
+    outline: 1px solid oklch(from var(--form-el-bg) calc(l * 2) c h);
   }
 }
 
@@ -326,7 +326,7 @@ input {
   }
 
   &[type="color"] {
-    background-color: light-dark(hsl(from var(--form-el-bg) h s calc(l * 2.5)), hsl(from var(--form-el-bg) h s calc(l * 0.75)));
+    background-color: light-dark(oklch(from var(--form-el-bg) calc(l * 2) calc(c * 0.75) h), oklch(from var(--form-el-bg) calc(l * 0.75) c h));
     height: 2rem;
     padding: 0.25rem;
   }
@@ -378,7 +378,7 @@ input {
     border-radius: 1em;
     vertical-align: middle;
     margin: auto;
-    background-color: light-dark(hsl(from var(--accent) h calc(s * 0.5) calc(l * 2)), hsl(from var(--accent) h calc(s * 0.5) l));
+    background-color: light-dark(oklch(from var(--accent) calc(l * 1.75) calc(c * 0.25) h), oklch(from var(--accent) l calc(c * 0.25) h));
     color: inherit;
     cursor: pointer;
 
@@ -393,12 +393,12 @@ input {
       height: 0.9em;
       margin: 0 0.25em;
       border-radius: 50%;
-      background: light-dark(hsl(from currentColor h s calc(l * 4)), currentColor);
+      background: light-dark(oklch(from currentColor calc(l * 4) c h), currentColor);
       transition: left 0.2s ease-in-out;
     }
 
     &:checked {
-      background-color: light-dark(hsl(from var(--accent) h s calc(l * 1.5)), var(--accent));
+      background-color: light-dark(oklch(from var(--accent) calc(l * 1.5) c h), oklch(from var(--accent) calc(l * 1.07) c h));
 
       &::before {
         left: 1.15em;
@@ -413,8 +413,8 @@ select {
 
 ::picker(select) {
   appearance: base-select;
-  background-color: light-dark(hsl(from var(--form-el-bg) h s calc(l * 2.35)), hsl(from var(--form-el-bg) h s calc(l * 0.3)));
-  border: 1px solid hsl(from var(--form-el-bg) h s calc(l * 1.25) / 0.5);
+  background-color: light-dark(oklch(from var(--form-el-bg) calc(l * 2.35) c h), oklch(from var(--form-el-bg) calc(l * 0.5) c h));
+  border: 1px solid oklch(from var(--form-el-bg) calc(l * 1.25) c h / 0.5);
   border-radius: var(--radius);
   font-size: clamp(0.85rem, calc(0.15dvw + 0.74rem), 0.95rem);
 }
@@ -427,18 +427,18 @@ button, input::file-selector-button {
 }
 
 input::file-selector-button {
-  background-color: light-dark(hsl(from var(--accent) h calc(s * 0.75) calc(l * 1.75)), hsl(from var(--accent) h calc(s * 0.75) l));
+  background-color: light-dark(oklch(from var(--accent) calc(l * 1.75) calc(c * 0.75) h), oklch(from var(--accent) l calc(c * 0.75) h));
   margin-right: 1rem;
 }
 
 /* Doesn't work when nested */
 input::file-selector-button:hover {
-  background-color: light-dark(hsl(from var(--accent) h calc(s * 0.75) calc(l * 2)), hsl(from var(--accent) h calc(s * 0.75) calc(l * 1.25)));
+  background-color: light-dark(oklch(from var(--accent) calc(l * 2) calc(c * 0.75) h), oklch(from var(--accent) calc(l * 1.25) calc(c * 0.75) h));
 }
 
 /* Doesn't work when nested */
 input::file-selector-button:active {
-  background-color: light-dark(hsl(from var(--accent) h calc(s * 0.75) calc(l * 1.5)), hsl(from var(--accent) h calc(s * 0.75) calc(l * 0.75)));
+  background-color: light-dark(oklch(from var(--accent) calc(l * 1.5) calc(c * 0.75) h), oklch(from var(--accent) calc(l * 0.75) calc(c * 0.75) h));
 }
 
 button {
@@ -448,11 +448,11 @@ button {
 
   &:not([disabled]) {
     &:hover {
-      background-color: light-dark(hsl(from var(--accent) h s calc(l * 1.25)), hsl(from var(--accent) h s calc(l * 1.15)));
+      background-color: light-dark(oklch(from var(--accent) calc(l * 1.25) c h), oklch(from var(--accent) calc(l * 1.15) c h));
     }
 
     &:active {
-      background-color: hsl(from var(--accent) h s calc(l * 0.85));
+      background-color: oklch(from var(--accent) calc(l * 0.85) c h);
     }
   }
 
@@ -461,11 +461,11 @@ button {
 
     &:not([disabled]) {
       &:hover {
-        background-color: light-dark(hsl(from var(--secondary) h s calc(l * 1.25)), hsl(from var(--secondary) h s calc(l * 1.15)));
+        background-color: light-dark(oklch(from var(--secondary) calc(l * 1.25) c h), oklch(from var(--secondary) calc(l * 1.15) c h));
       }
 
       &:active {
-        background-color: hsl(from var(--secondary) h s calc(l * 0.85));
+        background-color: oklch(from var(--secondary) calc(l * 0.85) c h);
       }
     }
   }
@@ -477,11 +477,11 @@ button {
 
     &:not([disabled]) {
       &:hover {
-        background-color: light-dark(hsl(from var(--secondary) h s l / 0.2), hsl(from var(--secondary) h s l / 0.4));
+        background-color: light-dark(oklch(from var(--secondary) l c h / 0.2), oklch(from var(--secondary) l c h / 0.4));
       }
 
       &:active {
-        background-color: light-dark(hsl(from var(--secondary) h s calc(l * 0.5) / 0.3), hsl(from var(--secondary) h s calc(l * 0.5) / 0.5));
+        background-color: light-dark(oklch(from var(--secondary) calc(l * 0.5) c h / 0.3), oklch(from var(--secondary) calc(l * 0.5) c h / 0.5));
       }
     }
   }
@@ -588,7 +588,7 @@ article {
   margin-bottom: 1rem;
   background-color: var(--card-bg);
   border-radius: var(--radius);
-  box-shadow: 8px 6px 10px hsl(from var(--bg) h s calc(l * 0.5) / 0.5);
+  box-shadow: 8px 6px 10px oklch(from var(--bg) calc(l * 0.5) c h / 0.5);
 
   & > header {
     margin-bottom: 1.5rem;
@@ -613,12 +613,12 @@ dialog {
   max-width: 100dvw;
   padding: 1rem;
   margin: auto;
-  background-color: hsl(from var(--bg) h s calc(l * 1.25));
+  background-color: oklch(from var(--bg) calc(l * 1.15) c h);
   border: 2px solid var(--code-bg);
   border-radius: var(--radius);
 
   &::backdrop {
-    background-color: hsl(from black h s l / 0.25);
+    background-color: oklch(from black l c h / 0.25);
     backdrop-filter: blur(8px);
   }
 
