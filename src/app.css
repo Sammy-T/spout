@@ -34,6 +34,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.theme-light {
+  color-scheme: light;
+}
+
+.theme-dark {
+  color-scheme: dark;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

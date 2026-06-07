@@ -1,20 +1,85 @@
 <script>
     import icMenu from './assets/menu-2.svg?raw';
+    import icSun from './assets/sun.svg?raw';
+    import icMoon from './assets/moon.svg?raw';
     import hljs from 'highlight.js/lib/common';
     import codeStylesLight from 'highlight.js/styles/github.min.css?raw';
     import codeStylesDark from 'highlight.js/styles/github-dark.min.css?raw';
     import { onMount } from 'svelte';
 
-    onMount(() => {
-        const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let prefersDark = $state(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let manualTheme = $state('');
+    let icTheme = $state(prefersDark ? icMoon : icSun);
 
-        const style = document.createElement('style');
-        style.innerHTML = (isDark) ? codeStylesDark : codeStylesLight;
+    const page = document.querySelector('html');
+
+    $effect(() => {
+        if(!manualTheme) return;
+
+        page?.classList.remove('theme-light');
+        page?.classList.remove('theme-dark');
+
+        page?.classList.add(`theme-${manualTheme}`);
+        icTheme = (manualTheme === 'dark') ? icMoon : icSun;
+    });
+
+    $effect(() => {
+        let styleTheme = '';
+
+        switch(manualTheme) {
+            case 'light':
+                styleTheme = codeStylesLight;
+                break;
+            
+            case 'dark':
+                styleTheme = codeStylesDark;
+                break;
+            
+            default:
+                styleTheme = (prefersDark) ? codeStylesDark : codeStylesLight;
+        }
+
+        const currCodeStyle = document.querySelector('#code-theme');
+        currCodeStyle?.remove();
+
+        const codeStyle = document.createElement('style');
+        codeStyle.id = 'code-theme';
+        codeStyle.innerHTML = styleTheme;
 
         const head = document.querySelector('head');
-        head?.appendChild(style);
+        head?.appendChild(codeStyle);
+
+        const highlighted = document.querySelectorAll('[data-highlighted]');
+        highlighted.forEach((el) => {
+            // @ts-ignore
+            el.dataset.highlighted = '';
+        });
 
         hljs.highlightAll();
+    });
+
+    function toggleTheme() {
+        switch(manualTheme) {
+            case 'light':
+                manualTheme = 'dark';
+                break;
+
+            case 'dark':
+                manualTheme = 'light';
+                break;
+
+            default:
+                manualTheme = (prefersDark) ? 'light' : 'dark';
+        }
+    }
+
+    onMount(() => {
+        const pageClasses = page?.classList;
+        const manuallyLight = pageClasses?.contains('theme-light');
+        const manuallyDark = pageClasses?.contains('theme-dark');
+        
+        if(manuallyLight) manualTheme = 'light';
+        if(manuallyDark) manualTheme = 'dark';
     });
 </script>
 
@@ -55,6 +120,7 @@
         <!-- TODO: Links -->
         <li><a href="#">GH</a></li>
         <li><a href="#">Temp</a></li>
+        <li><button class="outline" onclick={toggleTheme}>{@html icTheme}</button></li>
     </ul>
 </nav>
 
@@ -720,6 +786,10 @@
         position: sticky;
         top: 0;
         z-index: 1;
+
+        & button {
+            border: none;
+        }
     }
 
     main {
