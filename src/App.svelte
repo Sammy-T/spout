@@ -829,4 +829,14 @@
         grid-template-columns: repeat(2, auto);
         gap: 0.5rem;
     }
+
+    #list-section {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        #list-section {
+            grid-template-columns: repeat(2, auto);
+        }
+    }
 </style>
