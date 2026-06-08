@@ -84,7 +84,7 @@
 </script>
 
 {#snippet links()}
-    <li><a href="#bricks">Bricks</a></li>
+    <li><a href="#spout">Spout</a></li>
     <li><a href="#sections">Sections</a></li>
     <li><a href="#typography">Typography</a></li>
     <li><a href="#heading-group">Heading Group</a></li>
@@ -113,7 +113,7 @@
 <nav id="main-nav">
     <ul>
         <li class="mobile"><button class="outline" command="show-modal" commandfor="mobile-menu">{@html icMenu}</button></li>
-        <li><a href="/"><strong>bricks</strong></a></li>
+        <li><a href="/"><strong>spout</strong></a></li>
     </ul>
 
     <ul>
@@ -134,7 +134,7 @@
     </aside>
 
     <div class="contents">
-        <h1 id="bricks">bricks</h1>
+        <h1 id="spout">spout</h1>
         <p>A minimal, CSS-only library using reasonably supported, modern HTML and CSS features 
             and constructed with preference for semantic HTML.</p>
         <p>The goal of this library is to provide a simple CSS starter that can be used as-is or that 
