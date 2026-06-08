@@ -105,6 +105,7 @@
     <li><a href="#loading">Loading</a></li>
     <li><a href="#tooltips">Tooltips</a></li>
     <li><a href="#nav">Nav</a></li>
+    <li><a href="#screen-display">Screen Display</a></li>
 {/snippet}
 
 {#snippet tag(/** @type {String} */ name)}
@@ -756,6 +757,17 @@
         {@render tag('/nav')}
     {@render tag('/aside')}
 {@render tag('/dialog')}</code></pre>
+        </section>
+
+        <h2 id="screen-display">Screen Display</h2>
+        <p>Use class <code>mobile</code> or <code>desktop</code> on an element to limit its display to small or large screens.</p>
+
+        <section>
+            <article class="mobile"><p>This is only displayed on small screens.</p></article>
+            <article class="desktop"><p>This is only displayed on large screens.</p></article>
+
+<pre><code>{@render tag('article class="mobile"')}{@render tag('p')}This is only displayed on small screens.{@render tag('/p')}{@render tag('/article')}
+{@render tag('article class="desktop"')}{@render tag('p')}This is only displayed on large screens.{@render tag('/p')}{@render tag('/article')}</code></pre>
         </section>
     </div>
 </main>
