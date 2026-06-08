@@ -1,5 +1,6 @@
 <script>
     import icMenu from './assets/menu-2.svg?raw';
+    import icGH from './assets/brand-github.svg?raw';
     import icSun from './assets/sun.svg?raw';
     import icMoon from './assets/moon.svg?raw';
     import hljs from 'highlight.js/lib/common';
@@ -117,9 +118,7 @@
     </ul>
 
     <ul>
-        <!-- TODO: Links -->
-        <li><a href="#">GH</a></li>
-        <li><a href="#">Temp</a></li>
+        <li><a href="https://github.com/Sammy-T/spout" target="_blank">{@html icGH}</a></li>
         <li><button class="outline" onclick={toggleTheme}>{@html icTheme}</button></li>
     </ul>
 </nav>
