@@ -7,7 +7,7 @@
   "license": "GPL-3.0-only",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sammy-T/spout.git"
+    "url": "git+https://github.com/Sammy-T/spout.git"
   },
   "type": "module",
   "files": [
