@@ -8,6 +8,8 @@ can be customized and extended with your additional stylesheets.
 
 ## Getting Started
 
+Spout is available via [npm](https://www.npmjs.com/package/spout.css)
+
 ### Installing
 
 ```bash
