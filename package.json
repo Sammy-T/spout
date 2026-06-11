@@ -10,6 +10,9 @@
     "url": "git+https://github.com/Sammy-T/spout.git"
   },
   "type": "module",
+  "files": [
+    "src/spout.css"
+  ],
   "main": "src/spout.css",
   "scripts": {
     "dev": "vite",
