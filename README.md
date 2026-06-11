@@ -23,7 +23,7 @@ npm i spout.css
 > But you should adapt importing of the CSS to your project's build system.
 
 ```js
-import 'spout.css/src/spout.css';
+import 'spout.css';
 ```
 
 ## Development

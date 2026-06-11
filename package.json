@@ -1,6 +1,6 @@
 {
   "name": "spout.css",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A minimal, CSS-only library constructed with preference for semantic HTML.",
   "keywords": [],
   "author": "Sammy-T",
@@ -10,9 +10,7 @@
     "url": "git+https://github.com/Sammy-T/spout.git"
   },
   "type": "module",
-  "files": [
-    "src/spout.css"
-  ],
+  "main": "src/spout.css",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
