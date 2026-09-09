@@ -22,7 +22,9 @@
   --tooltip-color: light-dark(rgb(238, 238, 238), rgb(52, 52, 52));
   --table-border: 2px solid var(--code-bg);
   --radius: 0.25rem;
+}
 
+body {
   background: var(--bg);
   color: var(--para-color);
   font-family: var(--sans);
