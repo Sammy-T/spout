@@ -5,7 +5,7 @@
   /* --heading: system-ui, 'Segoe UI', Roboto, sans-serif; */
   --mono: ui-monospace, Consolas, monospace;
 
-  --bg: light-dark(#ffffff,#11151b);
+  --bg: light-dark(#ffffff,#121821);
   --text: contrast-color(var(--bg));
   --accent: #345183;
   --secondary: light-dark(oklch(from var(--accent) calc(l * 1.45) calc(c * 0.5) h), oklch(from var(--accent) calc(l * 0.85) calc(c * 0.5) h));
